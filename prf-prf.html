@@ -231,8 +231,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="capitulos/03/05.TeoremaTaylor.html">
-     3.5. Teorema de Taylor
+    <a class="reference internal" href="capitulos/03/05.ConcavidadConvexidad.html">
+     3.5. Convexidad y concavidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/03/06.TeoremaTaylor.html">
+     3.6. Teorema de Taylor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/03/07.Boletin3.html">
+     3.7. Boletín 3
     </a>
    </li>
   </ul>
@@ -370,8 +380,10 @@ title="Fullscreen mode"
    <a href="#cap-def_acos"><strong>def_acos</strong></a> | 
    <a href="#cap-def_atan"><strong>def_atan</strong></a> | 
    <a href="#cap-def_clase_funcion"><strong>def_clase_funcion</strong></a> | 
+   <a href="#cap-def_concavidad"><strong>def_concavidad</strong></a> | 
    <a href="#cap-def_cont_intervalos"><strong>def_cont_intervalos</strong></a> | 
    <a href="#cap-def_continuidad"><strong>def_continuidad</strong></a> | 
+   <a href="#cap-def_convexidad"><strong>def_convexidad</strong></a> | 
    <a href="#cap-def_coseno"><strong>def_coseno</strong></a> | 
    <a href="#cap-def_derivada"><strong>def_derivada</strong></a> | 
    <a href="#cap-def_derivada_segunda"><strong>def_derivada_segunda</strong></a> | 
@@ -383,16 +395,20 @@ title="Fullscreen mode"
    <a href="#cap-def_extremo_relativo"><strong>def_extremo_relativo</strong></a> | 
    <a href="#cap-def_log"><strong>def_log</strong></a> | 
    <a href="#cap-def_punto_critico"><strong>def_punto_critico</strong></a> | 
+   <a href="#cap-def_punto_inflexion"><strong>def_punto_inflexion</strong></a> | 
    <a href="#cap-def_raiz"><strong>def_raiz</strong></a> | 
    <a href="#cap-def_seno"><strong>def_seno</strong></a> | 
    <a href="#cap-def_tangente"><strong>def_tangente</strong></a> | 
    <a href="#cap-ex_clase_funcion"><strong>ex_clase_funcion</strong></a> | 
+   <a href="#cap-example_Rolle"><strong>example_Rolle</strong></a> | 
    <a href="#cap-prop_alg_exp"><strong>prop_alg_exp</strong></a> | 
    <a href="#cap-prop_alg_log"><strong>prop_alg_log</strong></a> | 
    <a href="#cap-prop_aritmetica_cont"><strong>prop_aritmetica_cont</strong></a> | 
    <a href="#cap-prop_aritmetica_derivada"><strong>prop_aritmetica_derivada</strong></a> | 
    <a href="#cap-prop_aritmetica_infinito"><strong>prop_aritmetica_infinito</strong></a> | 
    <a href="#cap-prop_comp_cont"><strong>prop_comp_cont</strong></a> | 
+   <a href="#cap-prop_concavidad_convexidad"><strong>prop_concavidad_convexidad</strong></a> | 
+   <a href="#cap-prop_corolario_Lagrange"><strong>prop_corolario_Lagrange</strong></a> | 
    <a href="#cap-prop_criterio_derivada_n"><strong>prop_criterio_derivada_n</strong></a> | 
    <a href="#cap-prop_criterio_primera_derivada"><strong>prop_criterio_primera_derivada</strong></a> | 
    <a href="#cap-prop_criterio_segunda_derivada"><strong>prop_criterio_segunda_derivada</strong></a> | 
@@ -404,11 +420,14 @@ title="Fullscreen mode"
    <a href="#cap-prop_regla_cadena"><strong>prop_regla_cadena</strong></a> | 
    <a href="#cap-prop_seno_cos"><strong>prop_seno_cos</strong></a> | 
    <a href="#cap-prop_valor_abs"><strong>prop_valor_abs</strong></a> | 
+   <a href="#cap-rem_Rolle"><strong>rem_Rolle</strong></a> | 
    <a href="#cap-rem_Taylor"><strong>rem_Taylor</strong></a> | 
    <a href="#cap-remark_cont"><strong>remark_cont</strong></a> | 
    <a href="#cap-remark_derivada"><strong>remark_derivada</strong></a> | 
    <a href="#cap-rm_lhopital"><strong>rm_lhopital</strong></a> | 
    <a href="#cap-th_Bolzano"><strong>th_Bolzano</strong></a> | 
+   <a href="#cap-th_Lagrange"><strong>th_Lagrange</strong></a> | 
+   <a href="#cap-th_Rolle"><strong>th_Rolle</strong></a> | 
    <a href="#cap-th_Taylor"><strong>th_Taylor</strong></a> | 
    <a href="#cap-th_Weierstrass"><strong>th_Weierstrass</strong></a> | 
    <a href="#cap-th_cond_necesaria_extremo"><strong>th_cond_necesaria_extremo</strong></a> | 
@@ -423,7 +442,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/05.TeoremaTaylor.html#def_Taylor"><code class="xref">def_Taylor</code></a> <em>(capitulos/03/05.TeoremaTaylor)</em></td><td>
+       <a href="capitulos/03/06.TeoremaTaylor.html#def_Taylor"><code class="xref">def_Taylor</code></a> <em>(capitulos/03/06.TeoremaTaylor)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_acos"><td></td><td>
@@ -447,7 +466,15 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.old.html#def_clase_funcion"><code class="xref">def_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#def_clase_funcion"><code class="xref">def_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_concavidad"><td></td><td>
+       <strong>def_concavidad</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/05.ConcavidadConvexidad.html#def_concavidad"><code class="xref">def_concavidad</code></a> <em>(capitulos/03/05.ConcavidadConvexidad)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_cont_intervalos"><td></td><td>
@@ -464,6 +491,14 @@ title="Fullscreen mode"
        <td></td>
        <td>
        <a href="capitulos/02/05.Continuidad.html#def_continuidad"><code class="xref">def_continuidad</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_convexidad"><td></td><td>
+       <strong>def_convexidad</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/05.ConcavidadConvexidad.html#def_convexidad"><code class="xref">def_convexidad</code></a> <em>(capitulos/03/05.ConcavidadConvexidad)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_coseno"><td></td><td>
@@ -487,7 +522,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.old.html#def_derivada_segunda"><code class="xref">def_derivada_segunda</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#def_derivada_segunda"><code class="xref">def_derivada_segunda</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_derivadas_laterales"><td></td><td>
@@ -503,7 +538,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.old.html#def_derivadas_sucesivas"><code class="xref">def_derivadas_sucesivas</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#def_derivadas_sucesivas"><code class="xref">def_derivadas_sucesivas</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_distancia"><td></td><td>
@@ -554,6 +589,14 @@ title="Fullscreen mode"
        <a href="capitulos/03/04.AplicacionesDerivada.html#def_punto_critico"><code class="xref">def_punto_critico</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_punto_inflexion"><td></td><td>
+       <strong>def_punto_inflexion</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/05.ConcavidadConvexidad.html#def_punto_inflexion"><code class="xref">def_punto_inflexion</code></a> <em>(capitulos/03/05.ConcavidadConvexidad)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_raiz"><td></td><td>
        <strong>def_raiz</strong></td><td></td></tr>
      <tr>
@@ -583,7 +626,15 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.old.html#ex_clase_funcion"><code class="xref">ex_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.html#ex_clase_funcion"><code class="xref">ex_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example_Rolle"><td></td><td>
+       <strong>example_Rolle</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/04.AplicacionesDerivada.html#example_Rolle"><code class="xref">example_Rolle</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_alg_exp"><td></td><td>
@@ -632,6 +683,22 @@ title="Fullscreen mode"
        <td></td>
        <td>
        <a href="capitulos/02/05.Continuidad.html#prop_comp_cont"><code class="xref">prop_comp_cont</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_concavidad_convexidad"><td></td><td>
+       <strong>prop_concavidad_convexidad</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/05.ConcavidadConvexidad.html#prop_concavidad_convexidad"><code class="xref">prop_concavidad_convexidad</code></a> <em>(capitulos/03/05.ConcavidadConvexidad)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_corolario_Lagrange"><td></td><td>
+       <strong>prop_corolario_Lagrange</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/04.AplicacionesDerivada.html#prop_corolario_Lagrange"><code class="xref">prop_corolario_Lagrange</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_criterio_derivada_n"><td></td><td>
@@ -722,12 +789,20 @@ title="Fullscreen mode"
        <a href="capitulos/02/03.FuncionesElementales.html#prop_valor_abs"><code class="xref">prop_valor_abs</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-rem_Rolle"><td></td><td>
+       <strong>rem_Rolle</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/04.AplicacionesDerivada.html#rem_Rolle"><code class="xref">rem_Rolle</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-rem_Taylor"><td></td><td>
        <strong>rem_Taylor</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/05.TeoremaTaylor.html#rem_Taylor"><code class="xref">rem_Taylor</code></a> <em>(capitulos/03/05.TeoremaTaylor)</em></td><td>
+       <a href="capitulos/03/06.TeoremaTaylor.html#rem_Taylor"><code class="xref">rem_Taylor</code></a> <em>(capitulos/03/06.TeoremaTaylor)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark_cont"><td></td><td>
@@ -762,12 +837,28 @@ title="Fullscreen mode"
        <a href="capitulos/02/05.Continuidad.html#th_Bolzano"><code class="xref">th_Bolzano</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_Lagrange"><td></td><td>
+       <strong>th_Lagrange</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/04.AplicacionesDerivada.html#th_Lagrange"><code class="xref">th_Lagrange</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_Rolle"><td></td><td>
+       <strong>th_Rolle</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/03/04.AplicacionesDerivada.html#th_Rolle"><code class="xref">th_Rolle</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-th_Taylor"><td></td><td>
        <strong>th_Taylor</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/05.TeoremaTaylor.html#th_Taylor"><code class="xref">th_Taylor</code></a> <em>(capitulos/03/05.TeoremaTaylor)</em></td><td>
+       <a href="capitulos/03/06.TeoremaTaylor.html#th_Taylor"><code class="xref">th_Taylor</code></a> <em>(capitulos/03/06.TeoremaTaylor)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-th_Weierstrass"><td></td><td>

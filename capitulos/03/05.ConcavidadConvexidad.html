@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.1. Conjuntos clásicos de números &#8212; Calculo en una variable</title>
+    <title>3.5. Convexidad y concavidad &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.2. Números complejos" href="02.NumerosComplejos.html" />
-    <link rel="prev" title="1. Conjuntos de números" href="README.html" />
+    <link rel="next" title="3.6. Teorema de Taylor" href="06.TeoremaTaylor.html" />
+    <link rel="prev" title="3.4. Aplicaciones de la derivada" href="04.AplicacionesDerivada.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,23 +119,23 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
    1. Conjuntos de números
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
      1.1. Conjuntos clásicos de números
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02.NumerosComplejos.html">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
      1.2. Numeros complejos
     </a>
    </li>
@@ -198,48 +198,48 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03/README.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
    3. Derivación
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+    <a class="reference internal" href="01.DerivacionDefProp.html">
      3.1. Definición de derivada y propiedades básicas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+    <a class="reference internal" href="02.NewtonRaphson.html">
      3.2. Método numérico de Newton-Raphson
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+    <a class="reference internal" href="03.DerivadasSucesivas.html">
      3.3. Derivadas sucesivas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
+    <a class="reference internal" href="04.AplicacionesDerivada.html">
      3.4. Aplicaciones de la derivada
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      3.5. Convexidad y concavidad
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
+    <a class="reference internal" href="06.TeoremaTaylor.html">
      3.6. Teorema de Taylor
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/07.Boletin3.html">
+    <a class="reference internal" href="07.Boletin3.html">
      3.7. Boletín 3
     </a>
    </li>
@@ -333,6 +333,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/03/05.ConcavidadConvexidad.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -355,7 +384,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/capitulos/01/01.ConjuntosClasicos.md"
+        <a href="../../_sources/capitulos/03/05.ConcavidadConvexidad.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -366,7 +395,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -415,35 +444,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-naturales-mathbb-n">
-   1.1.1. Números naturales,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{N}\)
-   </span>
+  <a class="reference internal nav-link" href="#definiciones">
+   3.5.1. Definiciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-enteros-mathbb-z">
-   1.1.2. Números enteros,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{Z}\)
-   </span>
+  <a class="reference internal nav-link" href="#convexidad-y-concavidad-para-funciones-suficientemente-derivables">
+   3.5.2. Convexidad y concavidad para funciones suficientemente derivables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-racionales-mathbb-q">
-   1.1.3. Números racionales,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{Q}\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-reales-mathbb-r">
-   1.1.4. Números reales,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{R}\)
-   </span>
+  <a class="reference internal nav-link" href="#mas-informacion">
+   3.5.3. Más información
   </a>
  </li>
 </ul>
@@ -455,7 +467,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Conjuntos clásicos de números</h1>
+                <h1>Convexidad y concavidad</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -466,35 +478,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-naturales-mathbb-n">
-   1.1.1. Números naturales,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{N}\)
-   </span>
+  <a class="reference internal nav-link" href="#definiciones">
+   3.5.1. Definiciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-enteros-mathbb-z">
-   1.1.2. Números enteros,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{Z}\)
-   </span>
+  <a class="reference internal nav-link" href="#convexidad-y-concavidad-para-funciones-suficientemente-derivables">
+   3.5.2. Convexidad y concavidad para funciones suficientemente derivables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-racionales-mathbb-q">
-   1.1.3. Números racionales,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{Q}\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeros-reales-mathbb-r">
-   1.1.4. Números reales,
-   <span class="math notranslate nohighlight">
-    \(\mathbb{R}\)
-   </span>
+  <a class="reference internal nav-link" href="#mas-informacion">
+   3.5.3. Más información
   </a>
  </li>
 </ul>
@@ -507,94 +502,62 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="conjuntos-clasicos-de-numeros">
-<h1><span class="section-number">1.1. </span>Conjuntos clásicos de números<a class="headerlink" href="#conjuntos-clasicos-de-numeros" title="Permalink to this headline">#</a></h1>
-<section id="numeros-naturales-mathbb-n">
-<h2><span class="section-number">1.1.1. </span>Números naturales, <span class="math notranslate nohighlight">\(\mathbb{N}\)</span><a class="headerlink" href="#numeros-naturales-mathbb-n" title="Permalink to this headline">#</a></h2>
-<p>El conjunto más pequeño de números es el formado por los <em>números naturales</em>,</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="convexidad-y-concavidad">
+<h1><span class="section-number">3.5. </span>Convexidad y concavidad<a class="headerlink" href="#convexidad-y-concavidad" title="Permalink to this headline">#</a></h1>
+<section id="definiciones">
+<h2><span class="section-number">3.5.1. </span>Definiciones<a class="headerlink" href="#definiciones" title="Permalink to this headline">#</a></h2>
+<p>Matemáticamente, la idea de una función convexa es sencilla: es aquella función en la que la recta secante está por encima de la gráfica de la función.
+Dicho de forma coloquial: es un vaso en el que no se derramaría el agua.</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_convexidad.png"><img alt="../../_images/cap_deriv_convexidad.png" src="../../_images/cap_deriv_convexidad.png" style="width: 400px;" /></a>
+<p>Si recordamos que la recta secante a <span class="math notranslate nohighlight">\(f\)</span> por <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> tiene ecuación <span class="math notranslate nohighlight">\(r(x) =\frac{f(b)-f(a)}{b-a}(x-a) + f(a)\)</span>, obtenemos la siguiente definición formal:</p>
+<div class="proof definition admonition" id="def_convexidad">
+<p class="admonition-title"><span>Definition </span> (Convexidad)</p>
+<section class="definition-content" id="proof-content">
+<p>Se dice que <span class="math notranslate nohighlight">\(f\)</span> es convexa en <span class="math notranslate nohighlight">\([a,b]\)</span> si</p>
 <div class="math notranslate nohighlight">
 \[
-  \mathbb{N}=\left\{1,2,3,4,...\right\}.
+f(x) \leq \frac{f(b)-f(a)}{b-a}(x-a) + f(a) \, , \qquad \forall x \in [a,b].
 \]</div>
-<p>Hay distintas opiniones acerca de si se debe incluir el <span class="math notranslate nohighlight">\(0\)</span> en este conjunto o no. De todos modos, esto es
-indiferente para nuestro objetivo.</p>
 </section>
-<section id="numeros-enteros-mathbb-z">
-<h2><span class="section-number">1.1.2. </span>Números enteros, <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span><a class="headerlink" href="#numeros-enteros-mathbb-z" title="Permalink to this headline">#</a></h2>
-<p>Cuando los naturales se mostraron insuficientes para algunas operaciones
-sencillas (como la resta) el conjunto fue ampliado y surgieron los
-<em>números enteros</em>,</p>
-<div class="math notranslate nohighlight">
-\[
-  \mathbb{Z}=\left\{...,-3,-2,-1,0,1,2,3,...\right\}.
-\]</div>
-<p>Es evidente que <span class="math notranslate nohighlight">\(\mathbb{N}\subset\mathbb{Z}\)</span>.</p>
+</div><p>Análogamente, diremos que <span class="math notranslate nohighlight">\(f\)</span> es cóncava si la gráfica queda por debajo de la recta secante o, equivalentemente, si su inversa es una función convexa.</p>
+<div class="proof definition admonition" id="def_concavidad">
+<p class="admonition-title"><span>Definition </span> (Concavidad)</p>
+<section class="definition-content" id="proof-content">
+<p>Se dice que <span class="math notranslate nohighlight">\(f\)</span> es cóncava en <span class="math notranslate nohighlight">\([a,b]\)</span> si <span class="math notranslate nohighlight">\(-f\)</span> es convexa en ese intervalo.</p>
 </section>
-<section id="numeros-racionales-mathbb-q">
-<h2><span class="section-number">1.1.3. </span>Números racionales, <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span><a class="headerlink" href="#numeros-racionales-mathbb-q" title="Permalink to this headline">#</a></h2>
-<p>Al estudiarse la división fue evidente que con los números enteros no era
-suficiente, así que nació el conjunto de <em>números racionales</em>,
-<span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>. Este conjunto está formado por las fracciones, <span class="math notranslate nohighlight">\(\frac{p}{q}\)</span>, donde <span class="math notranslate nohighlight">\(p\)</span>
-es entero y <span class="math notranslate nohighlight">\(q\)</span> natural (evitamos así la división entre <span class="math notranslate nohighlight">\(0\)</span>).</p>
-<p>Una representación aproximada (y, por lo tanto, siempre menos precisa) de
-representar los racionales es en
-formato decimal: <span class="math notranslate nohighlight">\(\alpha_0\, .a_1 a_2... a_n...\)</span>, donde <span class="math notranslate nohighlight">\(\alpha_0\in\mathbb{Z}\)</span> y
-<span class="math notranslate nohighlight">\(a_i\in\mathbb{Z}\)</span> con <span class="math notranslate nohighlight">\(0\leq a_i\leq 9\)</span>, para cualquier índice <span class="math notranslate nohighlight">\(i\)</span>.</p>
-<p>Si pensamos que <span class="math notranslate nohighlight">\(p=\frac{p}{1}\)</span>, <span class="math notranslate nohighlight">\(\forall p\in\mathbb{Z}\)</span>, resulta que <span class="math notranslate nohighlight">\(\mathbb{Z}\subset\mathbb{Q}\)</span>.</p>
+</div><p>La última definición vinculada a concavidad/convexidad es la siguiente:</p>
+<div class="proof definition admonition" id="def_punto_inflexion">
+<p class="admonition-title"><span>Definition </span> (Punto de inflexión)</p>
+<section class="definition-content" id="proof-content">
+<p>Se dice que <span class="math notranslate nohighlight">\(f\)</span> tiene un punto de inflexión en <span class="math notranslate nohighlight">\(x_{0}\)</span> si en ese punto la función pasa de cóncava a convexa o viceversa.</p>
 </section>
-<section id="numeros-reales-mathbb-r">
-<h2><span class="section-number">1.1.4. </span>Números reales, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#numeros-reales-mathbb-r" title="Permalink to this headline">#</a></h2>
-<p>Durante muchos siglos se pensó que era suficiente con los números racionales,
-pese a que las evidencias mostraban lo contrario. Finalmente, los griegos tuvieron que
-rendirse a las pruebas que mostraban que, por ejemplo, la longitud de la hipotenusa de un
-triángulo rectángulo con las dos aristas de longitud unidad, no puede ser representada
-como fracción. Es decir, que <span class="math notranslate nohighlight">\(\sqrt{2}\not\in\mathbb{Q}\)</span>. Es
-un ejemplo de <strong>número irracional</strong>, como también lo son <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(\sqrt{3}\)</span>,
-<em>etc.</em>. Aparecen los <strong>números reales</strong>, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, que agrupan tanto a los racionales como
-a los irracionales.</p>
-<a class="reference internal image-reference" href="../../_images/cap1_sqrt2_no_racional.png"><img alt="../../_images/cap1_sqrt2_no_racional.png" src="../../_images/cap1_sqrt2_no_racional.png" style="width: 150px;" /></a>
-<p>Hay dos propiedades muy importantes de los números reales que nos gustaría destacar
-aquí:</p>
-<ul>
-<li><p><strong>Propiedad arquimediana</strong>: Dados dos números reales, <span class="math notranslate nohighlight">\(a,b\in\mathbb{R}\)</span>, tales que <span class="math notranslate nohighlight">\(0&lt;a&lt;b\)</span>, entonces <span class="math notranslate nohighlight">\(\exists n\in\mathbb{N}\)</span> tal que <span class="math notranslate nohighlight">\(b&lt;na\)</span>.</p>
-<p>Por ejemplo, si <span class="math notranslate nohighlight">\(a=0.1\)</span> y <span class="math notranslate nohighlight">\(b=6000.38\)</span>, podemos tomar <span class="math notranslate nohighlight">\(n=100000\)</span> para obtener que <span class="math notranslate nohighlight">\(6000.38&lt;100000*0.1\)</span>.</p>
-</li>
-<li><p><strong>Propiedad. Densidad de <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> en <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></strong>: Dados dos números reales <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span>, con <span class="math notranslate nohighlight">\(a&lt;b\)</span>, existe <span class="math notranslate nohighlight">\(q\in\mathbb{Q}\)</span> tal que <span class="math notranslate nohighlight">\(a&lt;q&lt;b\)</span>.</p></li>
-</ul>
-<p>Estas propiedades merecen una breve explicación:</p>
+</div><a class="reference internal image-reference" href="../../_images/cap_deriv_puntos_inflexion.png"><img alt="../../_images/cap_deriv_puntos_inflexion.png" src="../../_images/cap_deriv_puntos_inflexion.png" style="width: 400px;" /></a>
+</section>
+<section id="convexidad-y-concavidad-para-funciones-suficientemente-derivables">
+<h2><span class="section-number">3.5.2. </span>Convexidad y concavidad para funciones suficientemente derivables<a class="headerlink" href="#convexidad-y-concavidad-para-funciones-suficientemente-derivables" title="Permalink to this headline">#</a></h2>
+<p>Y ahora una reflexión, que nos llevará a una importante propiedad: si una función es convexa (mira el gráfico del principio de esta sección), su derivada, si existe, será negativa al principio, luego valdrá <span class="math notranslate nohighlight">\(0\)</span> en el mínimo relativo para pasar a ser positiva a continuación. Es decir, la derivada de una función convexa es creciente. Y, por tanto, la derivada de ésta (es decir, la segunda derivada de <span class="math notranslate nohighlight">\(f\)</span>, siempre que exista) será positiva. Por supuesto, pasa lo contrario para una función cóncava.</p>
+<p>Todo esto se resume en la siguiente</p>
+<div class="proof property admonition" id="prop_concavidad_convexidad">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
 <ul class="simple">
-<li><p>La propiedad arquimediana viene a decirnos que dado cualquier número real siempre podremos encontrar otro más grande y, multiplicando el razonamiento por <span class="math notranslate nohighlight">\(-1\)</span>, que también podremos encontrar otro más pequeño. Es decir, que <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> es un conjunto infinito tanto por arriba como por abajo.</p></li>
-<li><p>La propiedad de densidad indica que dados dos números reales cualesquiera (y distintos, claro) siempre habrá otro número real entre ellos. Y otros dos números reales entre estos tres y… Es decir, que el conjunto de números reales es continuo.</p></li>
+<li><p>Sea <span class="math notranslate nohighlight">\(f:[a,b] \longrightarrow \mathbb{R}\)</span> continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y
+derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>. Entonces <span class="math notranslate nohighlight">\(f\)</span> es convexa en <span class="math notranslate nohighlight">\([a,b]\)</span> si y sólo
+si <span class="math notranslate nohighlight">\(f'\)</span> es creciente en <span class="math notranslate nohighlight">\((a,b)\)</span>. Esto equivale a que <span class="math notranslate nohighlight">\(f'' \geq 0\)</span>,
+si <span class="math notranslate nohighlight">\(f\)</span> tiene derivada segunda.</p></li>
+<li><p>Análogamente, <span class="math notranslate nohighlight">\(f\)</span> es cóncava en <span class="math notranslate nohighlight">\([a,b]\)</span> si y sólo si <span class="math notranslate nohighlight">\(f'\)</span> es decreciente
+en <span class="math notranslate nohighlight">\((a,b)\)</span> (es decir, si y sólo si <span class="math notranslate nohighlight">\(f'' \leq 0\)</span>, en caso de  existir derivada segunda).</p></li>
 </ul>
-<p>Con esto ya tenemos la justificación teórica que necesitamos para introducir la forma
-más común de representar los números reales: en una recta infinita. Dado un punto de
-la recta, <span class="math notranslate nohighlight">\(a\)</span>, que podemos identificar con un número real, a su derecha estarán los
-números reales mayores que <span class="math notranslate nohighlight">\(a\)</span> y a su izquierda los menores. Y la recta no presenta
-agujeros gracias a la propiedad de densidad.</p>
-<a class="reference internal image-reference" href="../../_images/cap1_recta_real.png"><img alt="../../_images/cap1_recta_real.png" src="../../_images/cap1_recta_real.png" style="width: 300px;" /></a>
-<p>Veamos algunas definiciones importantes que tienen que ver con la acotación de subconjuntos de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
-<p><strong>Definición:</strong>
-Sea <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> un subconjunto no vacío de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> (<span class="math notranslate nohighlight">\(\mathrm{A}\subset\mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{A}\not=\emptyset\)</span>).</p>
-<ol>
-<li><p>Decimos que <span class="math notranslate nohighlight">\(M\in\mathbb{R}\)</span> es <strong>cota superior</strong> de <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> si</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-      x\leq M,\qquad\forall x\in\mathrm{A}.
-    \end{equation*}\]</div>
-<p>Si el conjunto <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> admite alguna cota superior decimos que está <strong>acotado
-superiormente</strong>.</p>
-</li>
-<li><p>Decimos que <span class="math notranslate nohighlight">\(m\in\mathbb{R}\)</span> es <strong>cota inferior</strong> de <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> si</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-       m\leq x,\qquad\forall x\in\mathrm{A}.
-    \end{equation*}\]</div>
-<p>Si el conjunto <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> admite alguna cota inferior decimos que está <strong>acotado
-inferiormente</strong>.</p>
-</li>
-<li><p>Si <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> está acotado superior e inferiormente diremos simplemente que está
-<strong>acotado</strong>.</p></li>
-</ol>
+</section>
+</div><p>Ilustramos esta propiedad en la siguiente figura:</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_prop_convexidad.png"><img alt="../../_images/cap_deriv_prop_convexidad.png" src="../../_images/cap_deriv_prop_convexidad.png" style="width: 400px;" /></a>
+</section>
+<section id="mas-informacion">
+<h2><span class="section-number">3.5.3. </span>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>En esta página web puedes ver más explicaciones y algunos ejemplos (tanto resueltos como propuestos): <a class="reference external" href="https://www.funciones.xyz/concavidad-y-convexidad-de-una-funcion-curvatura/">https://www.funciones.xyz/concavidad-y-convexidad-de-una-funcion-curvatura/</a></p></li>
+<li><p>En la wiki empiezan fácil, pero van hacia conceptos más abstractos. Aún así, puedes echarle un vistazo: <a class="reference external" href="https://es.wikipedia.org/wiki/Funci%C3%B3n_convexa">https://es.wikipedia.org/wiki/Función_convexa</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -611,7 +574,7 @@ inferiormente</strong>.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./capitulos/01"
+            path: "./capitulos/03"
         },
         predefinedOutput: true
     }
@@ -625,17 +588,17 @@ inferiormente</strong>.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04.AplicacionesDerivada.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Conjuntos de números</p>
+            <p class="prev-next-title"><span class="section-number">3.4. </span>Aplicaciones de la derivada</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02.NumerosComplejos.html" title="next page">
+    <a class='right-next' id="next-link" href="06.TeoremaTaylor.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Números complejos</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Teorema de Taylor</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

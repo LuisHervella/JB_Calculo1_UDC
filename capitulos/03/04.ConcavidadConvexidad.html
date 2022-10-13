@@ -227,18 +227,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05.ConcavidadConvexidad.html">
-     3.5. Convexidad y concavidad
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="06.TeoremaTaylor.html">
-     3.6. Teorema de Taylor
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07.Boletin3.html">
-     3.7. Boletín 3
+     3.5. Teorema de Taylor
     </a>
    </li>
   </ul>
@@ -339,7 +329,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/03/03.DerivadasSucesivas.old.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/03/04.ConcavidadConvexidad.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -382,7 +372,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/capitulos/03/03.DerivadasSucesivas.old.ipynb"
+        <a href="../../_sources/capitulos/03/04.ConcavidadConvexidad.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -494,8 +484,8 @@ title="Print to PDF"
 <span class="n">f_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">display</span><span class="p">(</span><span class="n">f_exp</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f_exp</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="c1"># Nota: también se puede usar la siguiente escritura:</span>
 <span class="c1"># display(f_exp.diff(x,3))</span>
 </pre></div>
@@ -541,7 +531,7 @@ f(x)=\left\{
 <p>La representación gráfica de <span class="math notranslate nohighlight">\(f\)</span> en <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> se puede obtener del siguiento modo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_expr</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_expr</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
 <span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
@@ -551,7 +541,7 @@ f(x)=\left\{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.DerivadasSucesivas.old_3_0.png" src="../../_images/03.DerivadasSucesivas.old_3_0.png" />
+<img alt="../../_images/04.ConcavidadConvexidad_3_0.png" src="../../_images/04.ConcavidadConvexidad_3_0.png" />
 </div>
 </div>
 <p>Ahora vamos a comprobar si <span class="math notranslate nohighlight">\(f\)</span> es una función continua. Es evidente que <span class="math notranslate nohighlight">\(f\)</span> es continua en todo punto <span class="math notranslate nohighlight">\(x\)</span> distinto del <span class="math notranslate nohighlight">\(0\)</span>, ya que para <span class="math notranslate nohighlight">\(x&lt;0\)</span> y para <span class="math notranslate nohighlight">\(x&gt;0\)</span> <span class="math notranslate nohighlight">\(f\)</span> es un polinomio. El <span class="math notranslate nohighlight">\(0\)</span> es un punto que debemos estudiar con más cuidado, ya que en él se produce un cambio en la definición de <span class="math notranslate nohighlight">\(f\)</span>. Calculamos sus límites laterales,</p>
@@ -615,7 +605,7 @@ x&amp;\quad\mbox{si }x\geq 0.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.DerivadasSucesivas.old_7_0.png" src="../../_images/03.DerivadasSucesivas.old_7_0.png" />
+<img alt="../../_images/04.ConcavidadConvexidad_7_0.png" src="../../_images/04.ConcavidadConvexidad_7_0.png" />
 </div>
 </div>
 <p>Ahora intentamos calcular la derivada segunda de <span class="math notranslate nohighlight">\(f\)</span>. Comenzamos con el punto problemático, <span class="math notranslate nohighlight">\(x=0\)</span>, calculando sus derivadas laterales.</p>
@@ -632,23 +622,18 @@ x&amp;\quad\mbox{si }x\geq 0.
 <p>Con la ayuda de Sympy podríamos analizarlo del siguiente modo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2_expr</span> <span class="o">=</span> <span class="n">f_expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f2_expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1_expr</span> <span class="o">=</span> <span class="n">f_expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f1_expr</span><span class="p">)</span>
 
-<span class="n">f2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f2_expr</span><span class="p">)</span>
-<span class="n">f2_0Minus</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">f2_0Plus</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f2_0Minus</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">((</span><span class="n">f1</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">-</span><span class="n">f1</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="n">h</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">f2_0Plus</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">((</span><span class="n">f1</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">-</span><span class="n">f1</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="n">h</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f2_0Minus = &#39;</span><span class="p">,</span> <span class="n">f2_0Minus</span><span class="p">,</span> <span class="s1">&#39;, f2_0Plus = &#39;</span><span class="p">,</span> <span class="n">f2_0Plus</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Existe f</span><span class="se">\&#39;\&#39;</span><span class="s1">(0)?&#39;</span><span class="p">,</span><span class="n">f2_0Minus</span><span class="o">==</span><span class="n">f2_0Plus</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03.DerivadasSucesivas.old_9_0.png" src="../../_images/03.DerivadasSucesivas.old_9_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f2_0Minus =  -1.00000000000000 , f2_0Plus =  1.00000000000000
 Existe f&#39;&#39;(0)? False
 </pre></div>

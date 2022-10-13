@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.5. Teorema de Taylor" href="05.TeoremaTaylor.html" />
+    <link rel="next" title="3.5. Convexidad y concavidad" href="05.ConcavidadConvexidad.html" />
     <link rel="prev" title="3.3. Derivadas sucesivas" href="03.DerivadasSucesivas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -229,8 +229,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05.TeoremaTaylor.html">
-     3.5. Teorema de Taylor
+    <a class="reference internal" href="05.ConcavidadConvexidad.html">
+     3.5. Convexidad y concavidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.TeoremaTaylor.html">
+     3.6. Teorema de Taylor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.Boletin3.html">
+     3.7. Boletín 3
     </a>
    </li>
   </ul>
@@ -439,8 +449,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aplicaciones-inmediatas-de-la-derivacion-de-funciones">
-   3.4.2. Aplicaciones inmediatas de la derivación de funciones
+  <a class="reference internal nav-link" href="#teoremas-de-rolle-y-lagrange">
+   3.4.2. Teoremas de Rolle y Lagrange
   </a>
  </li>
 </ul>
@@ -468,8 +478,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aplicaciones-inmediatas-de-la-derivacion-de-funciones">
-   3.4.2. Aplicaciones inmediatas de la derivación de funciones
+  <a class="reference internal nav-link" href="#teoremas-de-rolle-y-lagrange">
+   3.4.2. Teoremas de Rolle y Lagrange
   </a>
  </li>
 </ul>
@@ -495,7 +505,7 @@ title="Print to PDF"
 \[\begin{equation*}
 f(x) \leq f(a) , \quad \forall x \in (a-h,a+h) \, .
 \end{equation*}\]</div>
-<p>Análogamente, decimos que <span class="math notranslate nohighlight">\(f\)</span> presenta un <strong>m’{i}nimo relativo</strong> en <span class="math notranslate nohighlight">\(a \in A\)</span> si y sólo si existe <span class="math notranslate nohighlight">\(h &gt; 0\)</span> tal que:</p>
+<p>Análogamente, decimos que <span class="math notranslate nohighlight">\(f\)</span> presenta un <strong>mínimo relativo</strong> en <span class="math notranslate nohighlight">\(a \in A\)</span> si y sólo si existe <span class="math notranslate nohighlight">\(h &gt; 0\)</span> tal que:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 f(x) \geq f(a) , \quad \forall x \in (a-h,a+h) \, .
@@ -534,6 +544,8 @@ dicho punto, entonces <span class="math notranslate nohighlight">\(f'(a) = 0\)</
 </div><p>Fíjate bien en que <strong>la condición anterior es necesaria, pero no suficiente</strong>: la función puede presentar derivada nula en un punto, pero no tener un extremo en él.
 Es decir, para funciones derivables, <em>extremo relativo <span class="math notranslate nohighlight">\(\Rightarrow\)</span> punto crítico</em>, pero <em>punto crítico <span class="math notranslate nohighlight">\(\not\Rightarrow\)</span> extremo relativo</em>.</p>
 <p>Por ejemplo, la función <span class="math notranslate nohighlight">\(f(x) = x^3\)</span> verifica <span class="math notranslate nohighlight">\(f'(0) = 0\)</span>, pero no se trata de un máximo ni de un mínimo.</p>
+<p>Intentamos ilustrar esta extraña relación en la siguiente figura:
+<a class="reference internal" href="../../_images/cap_deriv_ext_criticos.jpg"><img alt="../../_images/cap_deriv_ext_criticos.jpg" src="../../_images/cap_deriv_ext_criticos.jpg" style="width: 600px;" /></a></p>
 <p>Entonces, resumiendo lo que acabamos de ver, cuando nos interesa localizar los extremos relativos de una función en un determinado intervalo (abierto), lo primero que haremos será buscar sus puntos críticos (es decir, buscar los <span class="math notranslate nohighlight">\(x\)</span> tales que <span class="math notranslate nohighlight">\(f'(x)=0\)</span>) y, a continuación, aplicar alguno de los criterios para la identificación de extremos relativos. Ya hemos visto el de la primera derivada, vamos a ver ahora el más utilizado:</p>
 <div class="proof property admonition" id="prop_criterio_segunda_derivada">
 <p class="admonition-title"><span>Property </span> (Criterio de la segunda derivada)</p>
@@ -575,32 +587,118 @@ Pues utilizar el siguiente criterio:</p>
 <li><p>los puntos donde <span class="math notranslate nohighlight">\(f\)</span> no es derivable,</p></li>
 <li><p>los extremos (<span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span>) del intervalo.</p></li>
 </ul>
+<p>En la siguiente figura, mostramos un ejemplo de una función continua en un intervalo cerrado y acotado, para la que el mínimo absoluto se encuentra en los dos puntos en los que la función es no derivable (mismo valor en ambos puntos), mientras que el máximo absoluto está en el extremos de la derecha del intervalo (aunque podría haber estado en el punto crítico que vemos para <span class="math notranslate nohighlight">\(x=\frac{\pi}{2}\)</span>).</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_extremos_absolutos.png"><img alt="../../_images/cap_deriv_extremos_absolutos.png" src="../../_images/cap_deriv_extremos_absolutos.png" style="width: 400px;" /></a>
 <p>Ya conocéis, de bachillerato, los problemas en los que hay que buscar el máximo y el mínimo absoluto de una función (continua) en determinado intervalo cerrado y acotado.
 Suelen disfrazarse con un texto más o menos imaginativo (<em>Cortamos una hoja cuadrada de cartón de forma que […]</em>). Aquí tenéis 10 ejemplos (de diferentes tipos), para que vayáis practicando:
 <a class="reference external" href="https://existelimite.blogspot.com/search/label/M%C3%A1ximos%20y%20m%C3%ADnimos">https://existelimite.blogspot.com/search/label/Máximos y mínimos</a>.</p>
-<p><strong>Teorema de Rolle.</strong>
-Sea una aplicación <span class="math notranslate nohighlight">\(f : [a,b] \longrightarrow \mathbb{R}\)</span>, continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Si <span class="math notranslate nohighlight">\(f(a) = f(b)\)</span>, entonces existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
+</section>
+<section id="teoremas-de-rolle-y-lagrange">
+<h2><span class="section-number">3.4.2. </span>Teoremas de Rolle y Lagrange<a class="headerlink" href="#teoremas-de-rolle-y-lagrange" title="Permalink to this headline">#</a></h2>
+<div class="proof theorem admonition" id="th_Rolle">
+<p class="admonition-title"><span>Theorem </span> (Teorema de Rolle)</p>
+<section class="theorem-content" id="proof-content">
+<p>Sea una aplicación <span class="math notranslate nohighlight">\(f : [a,b] \longrightarrow \mathbb{R}\)</span>, continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Si <span class="math notranslate nohighlight">\(f(a) = f(b)\)</span>, entonces existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 f^{\prime} (\xi) = 0 \, .
 \end{equation*}\]</div>
-<p><img alt="Teorema de Rolle" src="capitulos/03/rolle.png" /></p>
-<p><strong>Teorema de Cauchy, o del valor medio generalizado.</strong>
-Sean dos aplicaciones <span class="math notranslate nohighlight">\(f, g : [a,b] \rightarrow \mathbb{R}\)</span> continuas en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivables en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Entonces existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\left[ f(b) - f(a) \right] g' (\xi) = f' (\xi) \left[ g(b) - g(a) \right] \, .
-\end{equation*}\]</div>
-<p><strong>Teorema de Lagrange, o del valor medio , o de los incrementos finitos.</strong>
-Sea una aplicaci’{o}n <span class="math notranslate nohighlight">\(f : [a,b] \longrightarrow \mathbb{R}\)</span> continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Entonces, existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_Rolle.png"><img alt="../../_images/cap_deriv_Rolle.png" src="../../_images/cap_deriv_Rolle.png" style="width: 400px;" /></a>
+</section>
+</div><p>Debemos hacer algún comentario sobre este teorema.</p>
+<div class="proof remark admonition" id="rem_Rolle">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<ol>
+<li><p>El teorema nos dice que existe una raíz de <span class="math notranslate nohighlight">\(f'\)</span>. Puede existir más de una. No
+hablamos de unicidad.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f\)</span> cumple las hipótesis del teorema y tiene <span class="math notranslate nohighlight">\(n\)</span> raíces reales, <span class="math notranslate nohighlight">\(f'\)</span>
+tendrá, al menos, <span class="math notranslate nohighlight">\(n-1\)</span> raíces reales.</p>
+<p>Este hecho se ilustra en la siguiente figura. Según el teorema de Rolle, entre
+dos raíces de <span class="math notranslate nohighlight">\(f\)</span> (es decir, dos puntos donde <span class="math notranslate nohighlight">\(f\)</span> vale <span class="math notranslate nohighlight">\(0\)</span>) tiene que haber, por lo
+menos, una raíz de <span class="math notranslate nohighlight">\(f'\)</span>.</p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_remark_Rolle.jpg"><img alt="../../_images/cap_deriv_remark_Rolle.jpg" src="../../_images/cap_deriv_remark_Rolle.jpg" style="width: 400px;" /></a>
+</li>
+<li><p>Recíprocamente, si <span class="math notranslate nohighlight">\(f'\)</span> tiene <span class="math notranslate nohighlight">\(n\)</span> raíces reales, <span class="math notranslate nohighlight">\(f\)</span> tendrá, a lo sumo, <span class="math notranslate nohighlight">\(n+1\)</span>
+raíces reales.</p></li>
+</ol>
+</section>
+</div><p>A continuación vamos a ver un ejercicio en el que se muestra una aplicación típica
+del teorema de Rolle: mostrar la unicidad de una raíz.</p>
+<div class="proof example admonition" id="example_Rolle">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Demostrar que la ecuación</p>
+<div class="math notranslate nohighlight">
+\[
+x+\sin x=\frac{1}{\sqrt{x}+3}
+\]</div>
+<p>tiene exactamente una raíz en <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
+<p><strong>Solución:</strong></p>
+<p>En primer lugar, vamos a re-escribir nuestro problema como el cálculo de las raíces de
+una función. Sólo hay que darse cuenta de que la ecuación que nos dan se puede
+escribir</p>
+<div class="math notranslate nohighlight">
+\[
+x+\sin x-\frac{1}{\sqrt{x}+3}=0,
+\]</div>
+<p>y, por tanto, es lo mismo que buscar las raíces de la función</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x+\sin x-\frac{1}{\sqrt{x}+3}.
+\]</div>
+<p>Vamos a demostrar que esta función tiene raíz en <span class="math notranslate nohighlight">\([0,\pi]\)</span> (utilizando el teorema de
+Bolzano), y, a continuación, que esta raíz es única, con el teorema de Rolle.</p>
+<p><em>Existencia</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left.\begin{array}{l}
+f\mbox{ continua en }[0,\pi] \\
+f(0)=0+\sin 0-\frac{1}{\sqrt{0}+3}=-\frac{1}{3}&lt;0 \\
+f(\pi)= \pi+\sin \pi-\frac{1}{\sqrt{\pi}+3}=\pi-\frac{1}{\sqrt{\pi}+3}&gt;0
+\end{array}\right\} 
+\stackrel{\mbox{(Bolzano)}}{\Longrightarrow}
+\mbox{Existe raíz de $f$ en }[0,\pi].
+\end{split}\]</div>
+<p><em>Unicidad</em></p>
+<p>Para probar la unicidad razonaremos por reducción al absurdo. Según el teorema de
+Rolle, si <span class="math notranslate nohighlight">\(f\)</span> tuviera dos raíces en <span class="math notranslate nohighlight">\([0,\pi]\)</span>, habría algún punto entre ellas (por
+lo tanto en <span class="math notranslate nohighlight">\((0,\pi)\)</span>) en el que <span class="math notranslate nohighlight">\(f'\)</span> se anularía. Veamos que esto no es posible.
+Derivando,</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=1+\cos x+\frac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}.
+\]</div>
+<p>Como</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left.\begin{array}{ll}
+1+\cos x&gt;0&amp;\quad\forall x\in(0,\pi) \\
+\dfrac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}&gt;0&amp;\quad\forall x\in(0,\pi)
+\end{array}\right\}
+\Rightarrow
+f'(x)=1+\cos x+\frac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}&gt;0\quad\forall x\in(0,\pi),
+\end{split}\]</div>
+<p>lo que contradice el que exista un punto en el que <span class="math notranslate nohighlight">\(f'\)</span> se anula. Por lo tanto, es
+imposible que haya dos raíces distintas de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
+</section>
+</div><div class="proof theorem admonition" id="th_Lagrange">
+<p class="admonition-title"><span>Theorem </span> (Teorema del valor medio de Lagrange)</p>
+<section class="theorem-content" id="proof-content">
+<p>Sea una aplicaci’{o}n <span class="math notranslate nohighlight">\(f : [a,b] \longrightarrow \mathbb{R}\)</span> continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Entonces, existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 f(b) - f(a) = f' (\xi) (b - a) \, .
 \end{equation*}\]</div>
-<p><img alt="Teorema de Lagrange" src="capitulos/03/lagrange.png" /></p>
+<a class="reference internal image-reference" href="../../_images/cap_deriv_Lagrange.png"><img alt="../../_images/cap_deriv_Lagrange.png" src="../../_images/cap_deriv_Lagrange.png" style="width: 400px;" /></a>
 </section>
-<section id="aplicaciones-inmediatas-de-la-derivacion-de-funciones">
-<h2><span class="section-number">3.4.2. </span>Aplicaciones inmediatas de la derivación de funciones<a class="headerlink" href="#aplicaciones-inmediatas-de-la-derivacion-de-funciones" title="Permalink to this headline">#</a></h2>
+</div><p>Basta recordar que <span class="math notranslate nohighlight">\(\displaystyle\frac{f(b) - f(a)}{b-a}\)</span> es la pendiente de la recta secante a <span class="math notranslate nohighlight">\(f\)</span> por <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> para tener la interpretación geométrica de este teorema, que mostramos en la imagen anterior:
+existe un punto <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span> de forma que la recta tangente a <span class="math notranslate nohighlight">\(f\)</span> por ese punto es paralela a dicha recta
+secante.</p>
+<p>como una consecuencia inmediata del teorema anterior, tenemos la siguiente propiedad:</p>
+<div class="proof property admonition" id="prop_corolario_Lagrange">
+<p class="admonition-title"><span>Property </span></p>
+<section class="property-content" id="proof-content">
 <p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función real derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.</p>
 <ul class="simple">
 <li><p>Si <span class="math notranslate nohighlight">\(f' (x) \geq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es monótona creciente.</p></li>
@@ -608,16 +706,8 @@ f(b) - f(a) = f' (\xi) (b - a) \, .
 <li><p>Si <span class="math notranslate nohighlight">\(f' (x) = 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es constante.</p></li>
 <li><p>Si <span class="math notranslate nohighlight">\(f' (x) \neq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es inyectiva.</p></li>
 </ul>
-<p>El signo de <span class="math notranslate nohighlight">\(f'\)</span> puede utilizarse para determinar el carácter de máximo o mínimo de un punto estacionario: si <span class="math notranslate nohighlight">\(f\)</span>
-presenta en <span class="math notranslate nohighlight">\(a\)</span> un máximo relativo y es continua en <span class="math notranslate nohighlight">\((a - \delta , a + \delta)\)</span>, entonces</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{cases}
-f' (x) &gt; 0 , \quad \text{si } x &lt; a \\
-f' (x) &lt; 0 , \quad \text{si } x &gt; a
-\end{cases}
-\end{equation*}\]</div>
-<p>y lo contrario si <span class="math notranslate nohighlight">\(f\)</span> presenta un mínimo.</p>
+</section>
+</div><p>La deducción de este resultado es sencilla. Pensemos, por ejemplo, en el primer punto de la propiedad. Si <span class="math notranslate nohighlight">\(f' (x) \geq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, aplicando el resultado del Teorema de Lagrange, resulta que <span class="math notranslate nohighlight">\(f(b)-f(a)&gt;0\)</span>, o, lo que es lo mismo, <span class="math notranslate nohighlight">\(f(b)&gt;f(a)\)</span>. Es decir, <span class="math notranslate nohighlight">\(f\)</span> sería creciente respecto a los puntos <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span>. Aplicando el teorema en subintervalos, llegamos fácilmente al resultado.</p>
 </section>
 </section>
 
@@ -655,10 +745,10 @@ f' (x) &lt; 0 , \quad \text{si } x &gt; a
             <p class="prev-next-title"><span class="section-number">3.3. </span>Derivadas sucesivas</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="05.TeoremaTaylor.html" title="next page">
+    <a class='right-next' id="next-link" href="05.ConcavidadConvexidad.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>Teorema de Taylor</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Convexidad y concavidad</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
