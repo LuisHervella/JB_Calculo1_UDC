@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5.5. Derivación en Python &#8212; Calculo en una variable</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="5.4. Gráficas con Matplotlib" href="04.RepresentacionGraficaMatplotlib.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-148221575-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/udc_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Calculo en una variable</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/README.html">
+   1. Conjuntos de números
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/01.ConjuntosClasicos.html">
+     1.1. Conjuntos clásicos de números
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/02.NumerosComplejos.html">
+     1.2. Numeros complejos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/README.html">
+   2. Funciones reales de variable real
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01.Boletin0.html">
+     2.1. Boletín 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02.IntroduccionFuncionReal.html">
+     2.2. Definiciones básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/03.FuncionesElementales.html">
+     2.3. Funciones elementales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/04.Limites.html">
+     2.4. Límites
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/05.Continuidad.html">
+     2.5. Continuidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/06.Dicotomia.html">
+     2.6. Método de dicotomía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/07.Lagrange.html">
+     2.7. Polinomio de interpolación de Lagrange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/08.Boletin1.html">
+     2.8. Boletín 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/09.Boletin2.html">
+     2.9. Boletín 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/README.html">
+   3. Derivación
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01.DerivacionDefProp.html">
+     3.1. Definición de derivada y propiedades básicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02.NewtonRaphson.html">
+     3.2. Método numérico de Newton-Raphson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/03.DerivadasSucesivas.html">
+     3.3. Derivadas sucesivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/04.AplicacionesDerivada.html">
+     3.4. Aplicaciones de la derivada
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/05.ConcavidadConvexidad.html">
+     3.5. Convexidad y concavidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/06.TeoremaTaylor.html">
+     3.6. Teorema de Taylor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/07.Boletin3.html">
+     3.7. Boletín 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/README.html">
+   4. Integración
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   5. Python para cálculo de una variable
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.IntroduccionSympy.html">
+     5.1. Introducción a SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.LimitesContinuidadSympy.html">
+     5.2. Límites y continuidad en SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.IntroduccionNumpy.html">
+     5.3. Introducción a NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.RepresentacionGraficaMatplotlib.html">
+     5.4. Gráficas con Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.5. Derivación en Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/05/05.Derivacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/capitulos/05/05.Derivacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivar-en-sympy">
+   5.5.1. Derivar en
+   <strong>
+    Sympy
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sp-lambdify">
+   5.5.2. Uso de
+   <strong>
+    sp.lambdify
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1-polinomio-de-taylor">
+   5.5.3. Ejercicio 1: polinomio de Taylor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-2-maximos">
+   5.5.4. Ejercicio 2: máximos
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Derivación en Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivar-en-sympy">
+   5.5.1. Derivar en
+   <strong>
+    Sympy
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sp-lambdify">
+   5.5.2. Uso de
+   <strong>
+    sp.lambdify
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1-polinomio-de-taylor">
+   5.5.3. Ejercicio 1: polinomio de Taylor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-2-maximos">
+   5.5.4. Ejercicio 2: máximos
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="derivacion-en-python">
+<h1><span class="section-number">5.5. </span>Derivación en <strong>Python</strong><a class="headerlink" href="#derivacion-en-python" title="Permalink to this headline">#</a></h1>
+<p>En esta sección aprenderemos a derivar con <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> y aplicaremos este conocimiento sobre algunos ejemplos del Polinomio de Taylor.</p>
+<section id="derivar-en-sympy">
+<h2><span class="section-number">5.5.1. </span>Derivar en <strong>Sympy</strong><a class="headerlink" href="#derivar-en-sympy" title="Permalink to this headline">#</a></h2>
+<p>Para calcular simbólicamente la derivada primera de una función mediante Sympy se emplea la función <em>diff</em>. Por ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d1f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada primera es: &#39;</span><span class="p">,</span><span class="n">d1f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La derivada primera es:  -exp(x)*sin(x) + exp(x)*cos(x)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para calcular la derivada i-ésima</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d2f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada segunda es: &#39;</span><span class="p">,</span><span class="n">d2f</span><span class="p">)</span>
+<span class="n">d3f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La derivada tercera es: &#39;</span><span class="p">,</span><span class="n">d3f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La derivada segunda es:  -2*exp(x)*sin(x)
+La derivada tercera es:  -2*(sin(x) + cos(x))*exp(x)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uso-de-sp-lambdify">
+<h2><span class="section-number">5.5.2. </span>Uso de <strong>sp.lambdify</strong><a class="headerlink" href="#uso-de-sp-lambdify" title="Permalink to this headline">#</a></h2>
+<p>En el resto de esta práctica, así como en el resto del curo, necesitaremos que una función simbólica de <strong>Sympy</strong> actúe sobre variables que almacenen números en coma flotante o arrays de <strong>Numpy</strong>. En concreto, y aunque las utilidades de este comando son mucho más amplias, lo necesitaremos para representar las funciones obtenidas en <strong>Matplotlib</strong>.</p>
+<p>Esto se consigue utilizando la función <code class="docutils literal notranslate"><span class="pre">sp.lambdify</span></code>.</p>
+<p>Mostramos a continuación, sobre un ejemplo, su uso. En él denotaremos <em>f</em> la función en Sympy y <em>fn</em> la función numérica generada a partir de ésta con <code class="docutils literal notranslate"><span class="pre">sp.lambdify</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="c1"># La funcion f es simbolica: no podemos evaluarla</span>
+<span class="c1"># en variables numericas que almacenen valores en coma flotante, </span>
+<span class="c1"># o en arrays de numpy</span>
+<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># La funcion fn es numerica, y podemos evaluarla en numeros en coma flotante o en arrays de Numpy</span>
+<span class="n">fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-5.29217867e-18 -2.07879576e-01  0.00000000e+00  4.81047738e+00
+  2.83391752e-15]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-1-polinomio-de-taylor">
+<h2><span class="section-number">5.5.3. </span>Ejercicio 1: polinomio de Taylor<a class="headerlink" href="#ejercicio-1-polinomio-de-taylor" title="Permalink to this headline">#</a></h2>
+<p>El objetivo de este ejercicio es programar la función <em>series</em> de Sympy, que sirve para calcular el polinomio de Taylor.</p>
+<p>El objetivo es escribir una función <code class="docutils literal notranslate"><span class="pre">Python</span></code> que calcule de forma simbólica el polinomio de Taylor de una función dada. Como argumentos de entrada debe recibir la función, <span class="math notranslate nohighlight">\(f\)</span>, el centro de Taylor, <span class="math notranslate nohighlight">\(x_{0}\)</span>, y el orden del polinomio, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>La función debe devolver el polinomio de Taylor y la función que proporciona el resto de Taylor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Codigo aqui</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,t&#39;</span><span class="p">)</span>
+
+<span class="c1"># p: polinomio de Taylor</span>
+<span class="c1"># R: resto en valor absoluto</span>
+<span class="k">def</span> <span class="nf">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">+=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="n">i</span>
+    <span class="n">R</span><span class="o">=</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">,</span><span class="n">R</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora vamos a emplear la función anterior para calcular el polinomio de Taylor de grado 5 de la función</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\sin(x)-\cos(x),\]</div>
+<p>centrado en <span class="math notranslate nohighlight">\(x_0=0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Codigo aqui</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">p</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="n">taylor</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Polinomio de Taylor: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1"> Resto de Taylor: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polinomio de Taylor: 
+ x**5/120 - x**4/24 - x**3/6 + x**2/2 + x - 1 
+
+ Resto de Taylor: 
+ x**5*(-sin(t)/720 + cos(t)/720) + 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>A continuación vamos a representar, empleando <strong>Matplotlib</strong>, la función <em>f</em> junto a su polinomio de Taylor, <em>p</em>.</p>
+<p>También aproximaremos el valor de <span class="math notranslate nohighlight">\(f(\pi)\)</span> mediante dicho polinomio de Taylor y representaremos (mediante un segmento en rojo) la diferencia entre el valor exacto y el aproximado mediante el polinomio de Taylor.</p>
+<p>Representación de la función, el polinomio de Taylor y el residuo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Codigo aqui</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="n">pn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">fn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">pn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;p(x)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">],[</span><span class="n">fn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span><span class="n">pn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)],</span><span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05.Derivacion_12_0.png" src="../../_images/05.Derivacion_12_0.png" />
+</div>
+</div>
+<p>Ahora vamos a calcular el valor absoluto del resto de Taylor:</p>
+<div class="math notranslate nohighlight">
+\[
+|R(x)|=|f(x)-p_n(x)|
+\]</div>
+<p>así como la estimación (cota superior), a partir de la fórmula del resto que nos proporciona el Teorema de Taylor:</p>
+<div class="math notranslate nohighlight">
+\[
+|R(x)|\leq \max_{t \in [0,x]} \dfrac{|f^{n+1}(t)|}{(n+1)!}|x-0|^{n+1}.
+\]</div>
+<p>Para calcular la cota superior del resto de Taylor, debemos acotar la función <span class="math notranslate nohighlight">\(g(t)=\dfrac{|f^{n+1}(t)|}{(n+1)!}|x-0|^{n+1}\)</span> para <span class="math notranslate nohighlight">\(x=\pi\)</span>, en el intervalo correspondiente.</p>
+<p>Vamos a realizar esta acotación haciendo algo de <em>trampa</em>: utilizaremos <strong>Scipy</strong>. Concretamente su función <code class="docutils literal notranslate"><span class="pre">optimize.fminbound</span></code>, que calcula el mínimo de una función real de variable real en un intervalo.</p>
+<p>También haremos esta acotación gráficamente: representaremos la gráfica de <span class="math notranslate nohighlight">\(g\)</span> (el valor absoluto del resto de Taylor) en función de <span class="math notranslate nohighlight">\(t\in[0,\pi]\)</span> y buscaremos su máximo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convertir el resto de Taylor para x=pi en una funcion numerica</span>
+<span class="c1"># Como buscamos el maximo, multiplicamos por -1 (maximizar es minimizar el opuesto)</span>
+<span class="n">Rn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span> <span class="c1"># Opuesto del resto</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="c1"># Solucion grafica</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">Rn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;g(t)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Optimizamos el resto de Taylor</span>
+<span class="n">topt</span><span class="o">=</span><span class="n">optimize</span><span class="o">.</span><span class="n">fminbound</span><span class="p">(</span><span class="n">Rn</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El error es menor o igual que: &#39;</span><span class="p">,</span><span class="o">-</span><span class="n">Rn</span><span class="p">(</span><span class="n">topt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El error real es: &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">-</span><span class="n">pn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05.Derivacion_14_0.png" src="../../_images/05.Derivacion_14_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El error es menor o igual que:  1.4250257165462146
+El error real es:  0.5998660124549196
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-2-maximos">
+<h2><span class="section-number">5.5.4. </span>Ejercicio 2: máximos<a class="headerlink" href="#ejercicio-2-maximos" title="Permalink to this headline">#</a></h2>
+<p>Dado un canal de sección trapezoidal de lado 2, calcular el ángulo <span class="math notranslate nohighlight">\(\alpha\)</span> (ver dibujo) que maximiza el área de la sección del canal.</p>
+<a class="reference internal image-reference" href="../../_images/cap5_canal.svg"><img alt="../../_images/cap5_canal.svg" src="../../_images/cap5_canal.svg" width="300" /></a>
+<ol class="simple">
+<li><p>A mano. Obtener la función que proporciona el área del canal en función del ángulo <span class="math notranslate nohighlight">\( \alpha \)</span></p></li>
+<li><p>Simbólicamente: con <strong>Sympy</strong>.</p></li>
+<li><p>Numéricamente mediante el método de Newton con error menor que <span class="math notranslate nohighlight">\( 10^{-4} \)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Resolvemos el problema utilizando Sympy</span>
+<span class="n">x</span><span class="p">,</span><span class="n">xn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,xn&#39;</span><span class="p">)</span>
+<span class="c1"># Funcion que describe el area de la seccion en funcion del angulo</span>
+<span class="n">f</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">d1f</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d1fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d1f</span><span class="p">)</span>
+<span class="n">alphamax</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">d1f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La sección máxima se alcanza con ángulo: &#39;</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">alphamax</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La sección máxima se alcanza con ángulo:  1.0471975511965979
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Aproximamos el máximo con el método de Newton</span>
+<span class="n">maxit</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span>
+<span class="n">d2fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">d1f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">d2fn</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d2f</span><span class="p">)</span>
+<span class="n">xn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">=</span><span class="n">d1fn</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span><span class="o">/</span><span class="n">d2fn</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span>
+    <span class="n">xn</span><span class="o">=</span><span class="n">xn</span><span class="o">-</span><span class="n">res</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="o">&lt;</span><span class="n">eps</span><span class="p">):</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La sección máxima se alcanza con ángulo: &#39;</span><span class="p">,</span><span class="n">xn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La sección máxima se alcanza con ángulo:  1.0471975511965559
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos/05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04.RepresentacionGraficaMatplotlib.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5.4. </span>Gráficas con Matplotlib</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
