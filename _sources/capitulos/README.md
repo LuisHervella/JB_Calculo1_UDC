@@ -1,6 +1,9 @@
-# Cálculo en 1 variable
+# Cálculo en una variable
 
-Éste es el libro que usaremos en la asignatura **Cálculo** de la titulación **Grado en Ingeniería Informática** de la **Universidade da Coruña**.
+![build](https://github.com/LuisHervella/JB_Calculo1_UDC/actions/workflows/deploy-book.yml/badge.svg) [![CC BY 4.0][cc-by-shield]][cc-by] [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/)
+[![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2FLuisHervella.github.io%2FJB_Calculo1_UDC%2Fcapitulos%2FREADME.html)](https://LuisHervella.github.io/JB_Calculo1_UDC/capitulos/README.html)
+
+Éste es el libro que usaremos en la asignatura [**Cálculo**] (https://estudos.udc.es/gl/subject/614G01V01/614G01003/2022) de la titulación [**Grado en Ingeniería Informática**] (https://estudos.udc.es/gl/study/start/614G01V01) de la [**Universidade da Coruña**] (http://www.udc.es).
 
 Este material ha sido creado por (en orden alfabético):
 
@@ -11,18 +14,14 @@ Este material ha sido creado por (en orden alfabético):
 - Luis Hervella Nieto, 
 - José Germán López Salas, 
 - Manuel Pájaro Diéguez,
-- Andrés Prieto Aneiros e 
+- Andrés Prieto Aneiros, 
 - Hiram Varela Rodríguez.
 
-<!-- 2nd Edition by [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari), [John DeNero](http://denero.org), [David Wagner](https://www.cs.berkeley.edu/~daw/).
+Esta obra está bajo una
+[Licencia Creative Commons Atribución 4.0 Internacional][cc-by].
 
-This text was originally developed for the UC Berkeley course [Data 8: Foundations of Data Science][data8].
+[![CC BY 4.0][cc-by-image]][cc-by]
 
-You can [view this text online][ghpages] or [view the source][source].
-
-[data8]: http://data8.org/
-[ghpages]: https://inferentialthinking.com
-[source]: https://github.com/data-8/textbook
-
-The contents of this book are licensed for free consumption under the following license:
-[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/). -->
+[cc-by]: https://creativecommons.org/licenses/by/4.0/deed.es
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
