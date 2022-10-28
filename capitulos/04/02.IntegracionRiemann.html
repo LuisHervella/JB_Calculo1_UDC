@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Integración de Riemann &#8212; Calculo en una variable</title>
+    <title>4.2. Integración de Riemann &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Python para cálculo de una variable" href="../05/README.html" />
+    <link rel="prev" title="4.1. La integral indefinida" href="01.IntegracionIndefinida.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01/README.html">
    1. Conjuntos de números
@@ -243,17 +245,34 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="README.html">
    4. Integración
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01.IntegracionIndefinida.html">
+     4.1. Integración indefinida
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.2. Integral de Riemann
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05/README.html">
    5. Python para cálculo de una variable
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -344,7 +363,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/04/02.IntegracionRiemann.ipynb"
+        <a href="https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/04/02.IntegracionRiemann.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -448,27 +467,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sumas-de-riemann">
-   Sumas de Riemann
+   4.2.1. Sumas de Riemann
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definicion-de-integrabilidad-de-riemann">
-   Definición de integrabilidad de Riemann
+   4.2.2. Definición de integrabilidad de Riemann
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#teorema-de-integrabilidad">
-   Teorema de integrabilidad
+  <a class="reference internal nav-link" href="#propiedades-de-la-integral-de-riemann">
+   4.2.3. Propiedades de la integral de Riemann
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#propiedades-aritmeticas-y-del-punto-medio">
-   Propiedades aritméticas y del punto medio
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acotaciones">
-   Acotaciones
+  <a class="reference internal nav-link" href="#algunos-enlaces-para-ir-mas-alla">
+   4.2.4. Algunos enlaces para ir más allá
   </a>
  </li>
 </ul>
@@ -492,27 +506,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sumas-de-riemann">
-   Sumas de Riemann
+   4.2.1. Sumas de Riemann
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definicion-de-integrabilidad-de-riemann">
-   Definición de integrabilidad de Riemann
+   4.2.2. Definición de integrabilidad de Riemann
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#teorema-de-integrabilidad">
-   Teorema de integrabilidad
+  <a class="reference internal nav-link" href="#propiedades-de-la-integral-de-riemann">
+   4.2.3. Propiedades de la integral de Riemann
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#propiedades-aritmeticas-y-del-punto-medio">
-   Propiedades aritméticas y del punto medio
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acotaciones">
-   Acotaciones
+  <a class="reference internal nav-link" href="#algunos-enlaces-para-ir-mas-alla">
+   4.2.4. Algunos enlaces para ir más allá
   </a>
  </li>
 </ul>
@@ -526,63 +535,82 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="integracion-de-riemann">
-<h1>Integración de Riemann<a class="headerlink" href="#integracion-de-riemann" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4.2. </span>Integración de Riemann<a class="headerlink" href="#integracion-de-riemann" title="Permalink to this headline">#</a></h1>
 <p>Sea un intervalo <span class="math notranslate nohighlight">\([a,b] \subset \mathbb R\)</span> y sea <span class="math notranslate nohighlight">\(\,f : [a,b] \longrightarrow \mathbb R\)</span> una función acotada.</p>
 <p>En primer lugar, definimos el concepto de partición:</p>
+<div class="proof definition admonition" id="def_particion">
+<p class="admonition-title"><span>Definition </span> (Partición de un intervalo)</p>
+<section class="definition-content" id="proof-content">
 <p>Se llama partición <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> de <span class="math notranslate nohighlight">\([a,b]\)</span> a un conjunto de puntos <span class="math notranslate nohighlight">\( \left\{ x_0, x_1, \ldots, x_n \right\} \)</span> que verifica:</p>
 <div class="math notranslate nohighlight">
 \[
 a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_{n-1} &lt; x_n = b.
 \]</div>
-<p>Dada una partición <span class="math notranslate nohighlight">\(\mathcal P\)</span>, denotamos
+</section>
+</div><p>Dada una partición <span class="math notranslate nohighlight">\(\mathcal P\)</span>, denotamos
 $<span class="math notranslate nohighlight">\(M_i = \underset{x_{i-1} \leq x \leq x_i}{\sup} f(x),\)</span><span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(m_i = \underset{x_{i-1} \leq x \leq x_i}{\inf} f(x).\)</span>$</p>
 <section id="sumas-de-riemann">
-<h2>Sumas de Riemann<a class="headerlink" href="#sumas-de-riemann" title="Permalink to this headline">#</a></h2>
-<p>Se llama <strong>suma superior de Riemann</strong> de la función <span class="math notranslate nohighlight">\(f\)</span> relativa a la partición <span class="math notranslate nohighlight">\(\mathcal P\)</span> a:
-$<span class="math notranslate nohighlight">\(
-U (\mathcal P,f) = \overset{n}{\underset{i=1}{\sum}} \, M_i (x_i - x_{i-1}).
-\)</span>$</p>
-<p>Se llama <strong>suma inferior de Riemann</strong> de la función <span class="math notranslate nohighlight">\(f\)</span> relativa a la partición <span class="math notranslate nohighlight">\(\mathcal P\)</span> a:
-$<span class="math notranslate nohighlight">\(
-L (\mathcal P,f) = \overset{n}{\underset{i=1}{\sum}} \, m_i (x_i - x_{i-1}).
-\)</span>$</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;../../images/cap_4_trc_riemann2.jpg&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/02.IntegracionRiemann_4_0.jpg" src="../../_images/02.IntegracionRiemann_4_0.jpg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;../../images/cap_4_trc_riemann3.jpg&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/02.IntegracionRiemann_5_0.jpg" src="../../_images/02.IntegracionRiemann_5_0.jpg" />
-</div>
-</div>
-<p><strong>Ejemplo</strong></p>
+<h2><span class="section-number">4.2.1. </span>Sumas de Riemann<a class="headerlink" href="#sumas-de-riemann" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_sumas_Riemann">
+<p class="admonition-title"><span>Definition </span> (Sumas de Riemann)</p>
+<section class="definition-content" id="proof-content">
+<ul>
+<li><p>Se llama <strong>suma superior de Riemann</strong> de la función <span class="math notranslate nohighlight">\(f\)</span> relativa a la partición <span class="math notranslate nohighlight">\(\mathcal P\)</span> a:</p>
+<div class="math notranslate nohighlight">
+\[
+    U (\mathcal P,f) = \overset{n}{\underset{i=1}{\sum}} \, M_i (x_i - x_{i-1}).
+    \]</div>
+</li>
+<li><p>Se llama <strong>suma inferior de Riemann</strong> de la función <span class="math notranslate nohighlight">\(f\)</span> relativa a la partición <span class="math notranslate nohighlight">\(\mathcal P\)</span> a:</p>
+<div class="math notranslate nohighlight">
+\[
+    L (\mathcal P,f) = \overset{n}{\underset{i=1}{\sum}} \, m_i (x_i - x_{i-1}).
+    \]</div>
+</li>
+</ul>
+</section>
+</div><a class="reference internal image-reference" href="../../_images/cap_4_trc_riemann2.jpg"><img alt="../../_images/cap_4_trc_riemann2.jpg" src="../../_images/cap_4_trc_riemann2.jpg" style="width: 300px; height: 300px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cap_4_trc_riemann3.jpg"><img alt="../../_images/cap_4_trc_riemann3.jpg" src="../../_images/cap_4_trc_riemann3.jpg" style="width: 300px; height: 300px;" /></a>
+<div class="proof example admonition" id="ex_sumas_Riemann">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
 <p>Dada la partición <span class="math notranslate nohighlight">\(\mathcal{P} = \left\{0, \frac{\pi}{6}, \frac{\pi}{4}, \frac{\pi}{3}, \frac{\pi}{2}, \pi \right\}\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,\pi]\)</span> y la función <span class="math notranslate nohighlight">\(f(x)=\sin x\)</span>, calcula la suma superior de Riemann <span class="math notranslate nohighlight">\(U (\mathcal P,f)\)</span>.</p>
-<p>Solución:</p>
-<p>La representación gráfica de la función seno en el intervalo <span class="math notranslate nohighlight">\([0,\pi]\)</span> puede hacerse fácilmente con la ayuda de Sympy:</p>
+</section>
+</div><p><strong>Solución:</strong></p>
+<p>Representamos gráficamente la función seno en el intervalo <span class="math notranslate nohighlight">\([0,\pi]\)</span> y la partición <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> con <strong>Matplotlib</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+
+<span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">x1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">;</span> <span class="n">x2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span> <span class="n">x3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span> <span class="n">x4</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span> <span class="n">x5</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1">#plt.ylim(-5,20)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$f=\sin(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;$x_</span><span class="si">{0}</span><span class="s1">=a$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;$x_</span><span class="si">{1}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;$x_</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;$x_</span><span class="si">{3}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x4</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x4</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;$x_</span><span class="si">{4}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;$x_</span><span class="si">{5}</span><span class="s1">=b$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -598,18 +626,32 @@ L (\mathcal P,f) = \overset{n}{\underset{i=1}{\sum}} \, m_i (x_i - x_{i-1}).
 <li><p><span class="math notranslate nohighlight">\(\max\left\{\sin(x), x\in[\frac{\pi}{3},\frac{\pi}{2}]\right\}=\sin\left(\frac{\pi}{2}\right)=1\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\max\left\{\sin(x), x\in[\frac{\pi}{2},\pi]\right\}=\sin\left(\frac{\pi}{2}\right)=1\)</span>.</p></li>
 </ul>
-<p>Por tanto:
-<span class="math notranslate nohighlight">\(U (\mathcal P,f) = \left(\frac{\pi}{6} - 0\right) \frac12 + \left(\frac{\pi}{4} - \frac{\pi}{6}\right) \frac{\sqrt{2}}{2} + \left(\frac{\pi}{3} - \frac{\pi}{4}\right) \frac{\sqrt{3}}{2} + \left(\frac{\pi}{2} - \frac{\pi}{3}\right) 1 + \left(\pi- \frac{\pi}{2}\right) 1 = \frac{18+\sqrt{2}+\sqrt{3}}{24}\pi \approx 2.7680\)</span>.</p>
+<p>Por tanto:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+U (\mathcal P,f) &amp;=&amp; \left(\frac{\pi}{6} - 0\right) \frac12 + \left(\frac{\pi}{4} - \frac{\pi}{6}\right) \frac{\sqrt{2}}{2} + \left(\frac{\pi}{3} - \frac{\pi}{4}\right) \frac{\sqrt{3}}{2} + \left(\frac{\pi}{2} - \frac{\pi}{3}\right) 1 + \\
+&amp;&amp; + \left(\pi- \frac{\pi}{2}\right) 1 = \frac{18+\sqrt{2}+\sqrt{3}}{24}\pi \approx 2.7680.
+\end{eqnarray*}\]</div>
 </section>
 <section id="definicion-de-integrabilidad-de-riemann">
-<h2>Definición de integrabilidad de Riemann<a class="headerlink" href="#definicion-de-integrabilidad-de-riemann" title="Permalink to this headline">#</a></h2>
-<p><strong>Definición</strong> Dada una función <span class="math notranslate nohighlight">\(f\)</span> acotada, se dice que <span class="math notranslate nohighlight">\(f\)</span> es integrable en <span class="math notranslate nohighlight">\([a,b]\)</span> en el sentido de Riemann si y sólo si:
-$<span class="math notranslate nohighlight">\( \forall \varepsilon &gt; 0 , \quad \exists \mathcal P \text{ partición de \)</span>[a,b]<span class="math notranslate nohighlight">\( tal que } \, 
-U(\mathcal P,f) - L(\mathcal P,f) &lt; \varepsilon. \)</span><span class="math notranslate nohighlight">\(
-Se escribe \)</span>f\in{\cal R}[a,b]$.</p>
-<p><strong>Interpretación geométrica</strong>
-Si <span class="math notranslate nohighlight">\(f(x)\)</span> es una función positiva en un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>, su integral de Riemann, <span class="math notranslate nohighlight">\(\int_a^bf(x)\,dx\)</span>, representa el área limitada por la curva <span class="math notranslate nohighlight">\(y = f(x)\)</span>, el eje <span class="math notranslate nohighlight">\(y = 0\)</span> y las rectas <span class="math notranslate nohighlight">\(x = a\)</span> , y , <span class="math notranslate nohighlight">\(x = b\)</span>.</p>
-<p><strong>Ejemplo</strong> Calcule <span class="math notranslate nohighlight">\(\int_{-3}^3 \sqrt{9-x^2} dx\)</span>.</p>
+<h2><span class="section-number">4.2.2. </span>Definición de integrabilidad de Riemann<a class="headerlink" href="#definicion-de-integrabilidad-de-riemann" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def_integ_riemann">
+<p class="admonition-title"><span>Definition </span></p>
+<section class="definition-content" id="proof-content">
+<p>Dada una función <span class="math notranslate nohighlight">\(f\)</span> acotada, se dice que <span class="math notranslate nohighlight">\(f\)</span> es integrable en <span class="math notranslate nohighlight">\([a,b]\)</span> en el sentido de Riemann si y sólo si:</p>
+<div class="math notranslate nohighlight">
+\[ \forall \varepsilon &gt; 0 , \quad \exists \mathcal P \text{ partición de $[a,b]$ tal que } \, 
+U(\mathcal P,f) - L(\mathcal P,f) &lt; \varepsilon. \]</div>
+<p>Se escribe <span class="math notranslate nohighlight">\(f\in{\cal R}[a,b]\)</span>.</p>
+</section>
+</div><p><strong>Interpretación geométrica:</strong></p>
+<p>Si <span class="math notranslate nohighlight">\(f(x)\)</span> es una función positiva en un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>, su integral de Riemann, <span class="math notranslate nohighlight">\(\displaystyle\int_a^bf(x)\,dx\)</span>, representa el área limitada por la curva <span class="math notranslate nohighlight">\(y = f(x)\)</span>, el eje <span class="math notranslate nohighlight">\(y = 0\)</span> y las rectas <span class="math notranslate nohighlight">\(x = a\)</span>  y  <span class="math notranslate nohighlight">\(x = b\)</span>.</p>
+<div class="proof example admonition" id="ex_Riemann_1">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>Calcule <span class="math notranslate nohighlight">\(\int_{-3}^3 \sqrt{9-x^2} dx\)</span>.</p>
+</section>
+</div><p><strong>Solución:</strong></p>
 <p>Dibujemos la función <span class="math notranslate nohighlight">\(\sqrt{9-x^2}\)</span> en el intervalo <span class="math notranslate nohighlight">\([-3,3]\)</span> con Sympy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,43 +668,80 @@ Si <span class="math notranslate nohighlight">\(f(x)\)</span> es una función po
 <img alt="../../_images/02.IntegracionRiemann_10_0.png" src="../../_images/02.IntegracionRiemann_10_0.png" />
 </div>
 </div>
-<p>Vemos que en el intervalor <span class="math notranslate nohighlight">\([-3,3]\)</span> la función define una semicircunferencia de radio 3. Sabemos por geometría que el área de una circunferencia es <span class="math notranslate nohighlight">\(A = \pi r^2 = \pi \, 3^2 = 9 \pi\)</span>. Así, el área de la semicircunferencia es <span class="math notranslate nohighlight">\(\frac{9\pi}{2}\)</span>, luego $<span class="math notranslate nohighlight">\(\int_{-3}^3 \sqrt{9-x^2} dx=\frac{9\pi}{2}.\)</span>$</p>
+<p>Vemos que en el intervalo <span class="math notranslate nohighlight">\([-3,3]\)</span> la función define una semicircunferencia de radio 3. Sabemos por geometría que el área de una circunferencia es <span class="math notranslate nohighlight">\(A = \pi r^2 = \pi \, 3^2 = 9 \pi\)</span>. Así, el área de la semicircunferencia es <span class="math notranslate nohighlight">\(\frac{9\pi}{2}\)</span>, luego</p>
+<div class="math notranslate nohighlight">
+\[\int_{-3}^3 \sqrt{9-x^2} dx=\frac{9\pi}{2}.\]</div>
 </section>
-<section id="teorema-de-integrabilidad">
-<h2>Teorema de integrabilidad<a class="headerlink" href="#teorema-de-integrabilidad" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Toda función <em>continua</em> en <span class="math notranslate nohighlight">\([a,b]\)</span> es integrable en <span class="math notranslate nohighlight">\([a,b]\)</span>. En consecuencia, toda función <em>derivable</em> es integrable.</p></li>
+<section id="propiedades-de-la-integral-de-riemann">
+<h2><span class="section-number">4.2.3. </span>Propiedades de la integral de Riemann<a class="headerlink" href="#propiedades-de-la-integral-de-riemann" title="Permalink to this headline">#</a></h2>
+<div class="proof property admonition" id="prop_integrabilidad_Riemann">
+<p class="admonition-title"><span>Property </span> (Integrabilidad según Riemann)</p>
+<section class="property-content" id="proof-content">
+<ol>
+<li><p>Toda función <em>continua</em> en <span class="math notranslate nohighlight">\([a,b]\)</span> es integrable en <span class="math notranslate nohighlight">\([a,b]\)</span> (es decir: <span class="math notranslate nohighlight">\(f\in\mathcal{C}^{0}[a,b]\Rightarrow f\in\mathcal{R}[a,b]\)</span>). En consecuencia, toda función <em>derivable</em> es integrable.</p></li>
 <li><p>Toda función <em>monótona</em> y <em>acotada</em> en <span class="math notranslate nohighlight">\([a,b]\)</span> es integrable en <span class="math notranslate nohighlight">\([a,b]\)</span>.</p></li>
 <li><p>Toda función <em>acotada</em> en <span class="math notranslate nohighlight">\([a,b]\)</span> que presenta en dicho intervalo un número finito de puntos de discontinuidad, es integrable en <span class="math notranslate nohighlight">\([a,b]\)</span>.</p></li>
-<li><p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función <em>integrable</em> en <span class="math notranslate nohighlight">\([a,b]\)</span> en el sentido de Riemann, y tal que:
-$<span class="math notranslate nohighlight">\(m \leq f(x) \leq M , \quad \forall x \in [a,b].\)</span><span class="math notranslate nohighlight">\(
-Si \)</span>g<span class="math notranslate nohighlight">\( es *continua* en \)</span>[m,M]<span class="math notranslate nohighlight">\(, entonces la *función compuesta* \)</span>g \circ f<span class="math notranslate nohighlight">\(  es integrable en \)</span>[a,b]$.</p></li>
+<li><p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función <em>integrable</em> en <span class="math notranslate nohighlight">\([a,b]\)</span> en el sentido de Riemann, y tal que:</p>
+<div class="math notranslate nohighlight">
+\[m \leq f(x) \leq M , \quad \forall x \in [a,b].\]</div>
+<p>Si <span class="math notranslate nohighlight">\(g\)</span> es <em>continua</em> en <span class="math notranslate nohighlight">\([m,M]\)</span>, entonces la <em>función compuesta</em> <span class="math notranslate nohighlight">\(g \circ f\)</span>  es integrable en <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
+</li>
 </ol>
 </section>
-<section id="propiedades-aritmeticas-y-del-punto-medio">
-<h2>Propiedades aritméticas y del punto medio<a class="headerlink" href="#propiedades-aritmeticas-y-del-punto-medio" title="Permalink to this headline">#</a></h2>
+</div><div class="proof property admonition" id="prop_Riemann_aritmetica">
+<p class="admonition-title"><span>Property </span> (Propiedades aritméticas de la integración de Riemann)</p>
+<section class="property-content" id="proof-content">
 <p>Sean <span class="math notranslate nohighlight">\(f, g \in {\cal R}[a,b]\)</span>. Entonces:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f \pm g \in {\cal R}[a,b]\)</span> y <span class="math notranslate nohighlight">\(c\, f \in {\cal R}[a,b]\)</span>, <span class="math notranslate nohighlight">\(\forall c \in \mathbb R\)</span>, y se cumple:
-$<span class="math notranslate nohighlight">\(
-\begin{array}{c}
-\displaystyle
-\int_a ^b (f \pm g)(x) \,dx = \int_a ^b f(x) \,dx \pm \int_a ^b g(x) \,dx, \\[2.5ex]
-\displaystyle
-\int_a ^b (c\, f)(x) \,dx = c \int_a ^b f(x) \,dx.
-\end{array}
-\)</span>$</p></li>
-<li><p><span class="math notranslate nohighlight">\(fg \in {\cal R}[a,b]\)</span></p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(a &lt; c &lt; b\)</span>, entonces <span class="math notranslate nohighlight">\(f \in {\cal R}[a,c]\)</span> y <span class="math notranslate nohighlight">\(f \in {\cal R}[c,b]\)</span>, y se verifica: $<span class="math notranslate nohighlight">\(\int_a ^b f(x)\,dx = \int_a ^c f(x) \,dx + \int_c ^b f(x) \,dx.\)</span>$</p></li>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\forall \alpha \in \mathbb R\)</span>, <span class="math notranslate nohighlight">\(\alpha f\in {\cal R}[a,b]\)</span>, y se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+   \int_a ^b (\alpha\, f)(x) \,dx = \alpha \int_a ^b f(x) \,dx. 
+  \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f \pm g \in {\cal R}[a,b]\)</span> y se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+     \int_a ^b (f \pm g)(x) \,dx = \int_a ^b f(x) \,dx \pm \int_a ^b g(x) \,dx.
+    \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(fg \in {\cal R}[a,b]\)</span>.</p></li>
 </ul>
 </section>
-<section id="acotaciones">
-<h2>Acotaciones<a class="headerlink" href="#acotaciones" title="Permalink to this headline">#</a></h2>
+</div><div class="proof property admonition" id="prop_aditividad_intervalos">
+<p class="admonition-title"><span>Property </span> (Aditividad en intervalos)</p>
+<section class="property-content" id="proof-content">
+<p>Sea <span class="math notranslate nohighlight">\(f \in {\cal R}[a,b]\)</span> y supongamos un punto <span class="math notranslate nohighlight">\(c\)</span> en el intervalo <span class="math notranslate nohighlight">\((a,b)\)</span> (es decir, <span class="math notranslate nohighlight">\(a &lt; c &lt; b\)</span>).</p>
+<p>Entonces <span class="math notranslate nohighlight">\(f \in {\cal R}[a,c]\)</span> y <span class="math notranslate nohighlight">\(f \in {\cal R}[c,b]\)</span>, y se verifica:</p>
+<div class="math notranslate nohighlight">
+\[\int_a ^b f(x)\,dx = \int_a ^c f(x) \,dx + \int_c ^b f(x) \,dx.\]</div>
+</section>
+</div><div class="proof property admonition" id="prop_acotaciones_Riemann">
+<p class="admonition-title"><span>Property </span> (Acotaciones)</p>
+<section class="property-content" id="proof-content">
 <p>Sean <span class="math notranslate nohighlight">\(f, g \in {\cal R}[a,b]\)</span>.</p>
-<ul class="simple">
+<ul>
 <li><p>Si <span class="math notranslate nohighlight">\(f \leq g\)</span> en <span class="math notranslate nohighlight">\([a,b]\)</span>, entonces <span class="math notranslate nohighlight">\(\displaystyle\int_a ^b f(x) \,dx \leq \int_a ^b g(x) \,dx\)</span>.</p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(m\leq f(x) \leq M\)</span>, , <span class="math notranslate nohighlight">\(\forall x \in [a,b]\)</span>, entonces $<span class="math notranslate nohighlight">\(m(b-a)\leq \int_a ^b f(x) \,dx \leq M (b - a).\)</span>$</p></li>
-<li><p><span class="math notranslate nohighlight">\(|f| \in {\cal R}[a,b]\)</span>, y se cumple: $<span class="math notranslate nohighlight">\(\displaystyle\left|\int_a ^b f(x) \,dx \right| \leq \displaystyle\int_a ^b |f(x)|\,dx.\)</span>$</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(m\leq f(x) \leq M\)</span>, <span class="math notranslate nohighlight">\(\forall x \in [a,b]\)</span>, entonces</p>
+<div class="math notranslate nohighlight">
+\[m(b-a)\leq \int_a ^b f(x) \,dx \leq M (b - a).\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(|f| \in {\cal R}[a,b]\)</span>, y se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+   | \int_a^b f(x) \,dx | \leq \int_a^b |f(x)|\,dx.
+  \]</div>
+</li>
+</ul>
+</section>
+</div></section>
+<section id="algunos-enlaces-para-ir-mas-alla">
+<h2><span class="section-number">4.2.4. </span>Algunos enlaces para ir más allá<a class="headerlink" href="#algunos-enlaces-para-ir-mas-alla" title="Permalink to this headline">#</a></h2>
+<p>Si te ha picado la curiosidad y quieres ampliar tus conocimientos sobre la integral de Riemann, aquí tienes algunos enlaces que nos parecen interesantes:</p>
+<ul class="simple">
+<li><p>En la página de Silvestre Paredes Hernández, profesor en la Universidad Politécnica de Cartagena, encontramos este capítulo completo con todo lo que necesitáis saber sobre la integral de Riemann, teorema fundamental del cálculo, integración impropia y aplicaciones de la integral: <a class="reference external" href="https://www.dmae.upct.es/~paredes/mat1giqi/apuntes/Tema12.pdf">https://www.dmae.upct.es/~paredes/mat1giqi/apuntes/Tema12.pdf</a>.</p></li>
+<li><p>De la página personal de Jesús María Sánchez Montero, profesor en la Universidad de Sevilla: <a class="reference external" href="https://personal.us.es/jsmonter/jes1/pdf/intedef.pdf">https://personal.us.es/jsmonter/jes1/pdf/intedef.pdf</a>. Un pdf gráficamente muy chulo, con ejercicios resueltos e información ampliada.</p></li>
+<li><p>En la página de Benito J. González Rodríguez, profesor de la Universidad de La Laguna, encontramos el siguiente documento, que contiene una introducción muy completa sobre la integración de Riemann: <a class="reference external" href="https://bjglez.webs.ull.es/06-integral.pdf">https://bjglez.webs.ull.es/06-integral.pdf</a>. Podéis ver, por ejemplo, la demostración de que las funciones monótonas son Riemann-integrables.</p></li>
 </ul>
 </section>
 </section>
@@ -694,6 +773,20 @@ $<span class="math notranslate nohighlight">\(
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01.IntegracionIndefinida.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.1. </span>La integral indefinida</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../05/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Python para cálculo de una variable</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
@@ -704,6 +797,13 @@ $<span class="math notranslate nohighlight">\(
     By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
 </p>
         </footer>
     </div>

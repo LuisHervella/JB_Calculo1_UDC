@@ -247,17 +247,34 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="capitulos/04/README.html">
    4. Integración
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/01.IntegracionIndefinida.html">
+     4.1. Integración indefinida
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/02.IntegracionRiemann.html">
+     4.2. Integral de Riemann
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="capitulos/05/README.html">
    5. Python para cálculo de una variable
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -398,14 +415,27 @@ title="Fullscreen mode"
    <a href="#cap-def_exp"><strong>def_exp</strong></a> | 
    <a href="#cap-def_extremo_absoluto"><strong>def_extremo_absoluto</strong></a> | 
    <a href="#cap-def_extremo_relativo"><strong>def_extremo_relativo</strong></a> | 
+   <a href="#cap-def_integ_riemann"><strong>def_integ_riemann</strong></a> | 
    <a href="#cap-def_log"><strong>def_log</strong></a> | 
+   <a href="#cap-def_particion"><strong>def_particion</strong></a> | 
+   <a href="#cap-def_primitiva"><strong>def_primitiva</strong></a> | 
    <a href="#cap-def_punto_critico"><strong>def_punto_critico</strong></a> | 
    <a href="#cap-def_punto_inflexion"><strong>def_punto_inflexion</strong></a> | 
    <a href="#cap-def_raiz"><strong>def_raiz</strong></a> | 
    <a href="#cap-def_seno"><strong>def_seno</strong></a> | 
+   <a href="#cap-def_sumas_Riemann"><strong>def_sumas_Riemann</strong></a> | 
    <a href="#cap-def_tangente"><strong>def_tangente</strong></a> | 
+   <a href="#cap-ex_Riemann_1"><strong>ex_Riemann_1</strong></a> | 
    <a href="#cap-ex_clase_funcion"><strong>ex_clase_funcion</strong></a> | 
+   <a href="#cap-ex_indefinida_cambio_variable"><strong>ex_indefinida_cambio_variable</strong></a> | 
+   <a href="#cap-ex_indefinida_partes"><strong>ex_indefinida_partes</strong></a> | 
+   <a href="#cap-ex_indefinida_partes_2"><strong>ex_indefinida_partes_2</strong></a> | 
+   <a href="#cap-ex_integ_racionales"><strong>ex_integ_racionales</strong></a> | 
+   <a href="#cap-ex_sumas_Riemann"><strong>ex_sumas_Riemann</strong></a> | 
    <a href="#cap-example_Rolle"><strong>example_Rolle</strong></a> | 
+   <a href="#cap-prop_Riemann_aritmetica"><strong>prop_Riemann_aritmetica</strong></a> | 
+   <a href="#cap-prop_acotaciones_Riemann"><strong>prop_acotaciones_Riemann</strong></a> | 
+   <a href="#cap-prop_aditividad_intervalos"><strong>prop_aditividad_intervalos</strong></a> | 
    <a href="#cap-prop_alg_exp"><strong>prop_alg_exp</strong></a> | 
    <a href="#cap-prop_alg_log"><strong>prop_alg_log</strong></a> | 
    <a href="#cap-prop_aritmetica_cont"><strong>prop_aritmetica_cont</strong></a> | 
@@ -421,7 +451,13 @@ title="Fullscreen mode"
    <a href="#cap-prop_derivadas_elementales"><strong>prop_derivadas_elementales</strong></a> | 
    <a href="#cap-prop_derivadas_laterales"><strong>prop_derivadas_laterales</strong></a> | 
    <a href="#cap-prop_indeterminaciones"><strong>prop_indeterminaciones</strong></a> | 
+   <a href="#cap-prop_integ_cambio_variable"><strong>prop_integ_cambio_variable</strong></a> | 
+   <a href="#cap-prop_integ_racionales"><strong>prop_integ_racionales</strong></a> | 
+   <a href="#cap-prop_integrabilidad_Riemann"><strong>prop_integrabilidad_Riemann</strong></a> | 
+   <a href="#cap-prop_integracion_ind_partes"><strong>prop_integracion_ind_partes</strong></a> | 
+   <a href="#cap-prop_integrales_inmediatas"><strong>prop_integrales_inmediatas</strong></a> | 
    <a href="#cap-prop_lim_cont"><strong>prop_lim_cont</strong></a> | 
+   <a href="#cap-prop_linealidad_int_indef"><strong>prop_linealidad_int_indef</strong></a> | 
    <a href="#cap-prop_regla_cadena"><strong>prop_regla_cadena</strong></a> | 
    <a href="#cap-prop_seno_cos"><strong>prop_seno_cos</strong></a> | 
    <a href="#cap-prop_valor_abs"><strong>prop_valor_abs</strong></a> | 
@@ -437,7 +473,8 @@ title="Fullscreen mode"
    <a href="#cap-th_Weierstrass"><strong>th_Weierstrass</strong></a> | 
    <a href="#cap-th_cond_necesaria_extremo"><strong>th_cond_necesaria_extremo</strong></a> | 
    <a href="#cap-th_dicotomia_estimacion"><strong>th_dicotomia_estimacion</strong></a> | 
-   <a href="#cap-th_lhopital"><strong>th_lhopital</strong></a>
+   <a href="#cap-th_lhopital"><strong>th_lhopital</strong></a> | 
+   <a href="#cap-th_primitivas"><strong>th_primitivas</strong></a>
    </div>
 
    <table class="indextable modindextable">
@@ -578,12 +615,36 @@ title="Fullscreen mode"
        <a href="capitulos/03/04.AplicacionesDerivada.html#def_extremo_relativo"><code class="xref">def_extremo_relativo</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_integ_riemann"><td></td><td>
+       <strong>def_integ_riemann</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#def_integ_riemann"><code class="xref">def_integ_riemann</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_log"><td></td><td>
        <strong>def_log</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="capitulos/02/03.FuncionesElementales.html#def_log"><code class="xref">def_log</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_particion"><td></td><td>
+       <strong>def_particion</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#def_particion"><code class="xref">def_particion</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_primitiva"><td></td><td>
+       <strong>def_primitiva</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#def_primitiva"><code class="xref">def_primitiva</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_punto_critico"><td></td><td>
@@ -618,6 +679,14 @@ title="Fullscreen mode"
        <a href="capitulos/02/03.FuncionesElementales.html#def_seno"><code class="xref">def_seno</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_sumas_Riemann"><td></td><td>
+       <strong>def_sumas_Riemann</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#def_sumas_Riemann"><code class="xref">def_sumas_Riemann</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_tangente"><td></td><td>
        <strong>def_tangente</strong></td><td></td></tr>
      <tr>
@@ -625,6 +694,14 @@ title="Fullscreen mode"
        <td>
        <a href="capitulos/02/03.FuncionesElementales.html#def_tangente"><code class="xref">def_tangente</code></a> <em>(capitulos/02/03.FuncionesElementales)</em></td><td>
        <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_Riemann_1"><td></td><td>
+       <strong>ex_Riemann_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#ex_Riemann_1"><code class="xref">ex_Riemann_1</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex_clase_funcion"><td></td><td>
        <strong>ex_clase_funcion</strong></td><td></td></tr>
@@ -634,6 +711,46 @@ title="Fullscreen mode"
        <a href="capitulos/03/03.DerivadasSucesivas.old.html#ex_clase_funcion"><code class="xref">ex_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_indefinida_cambio_variable"><td></td><td>
+       <strong>ex_indefinida_cambio_variable</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#ex_indefinida_cambio_variable"><code class="xref">ex_indefinida_cambio_variable</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_indefinida_partes"><td></td><td>
+       <strong>ex_indefinida_partes</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#ex_indefinida_partes"><code class="xref">ex_indefinida_partes</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_indefinida_partes_2"><td></td><td>
+       <strong>ex_indefinida_partes_2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#ex_indefinida_partes_2"><code class="xref">ex_indefinida_partes_2</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_integ_racionales"><td></td><td>
+       <strong>ex_integ_racionales</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#ex_integ_racionales"><code class="xref">ex_integ_racionales</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_sumas_Riemann"><td></td><td>
+       <strong>ex_sumas_Riemann</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#ex_sumas_Riemann"><code class="xref">ex_sumas_Riemann</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example_Rolle"><td></td><td>
        <strong>example_Rolle</strong></td><td></td></tr>
      <tr>
@@ -641,6 +758,30 @@ title="Fullscreen mode"
        <td>
        <a href="capitulos/03/04.AplicacionesDerivada.html#example_Rolle"><code class="xref">example_Rolle</code></a> <em>(capitulos/03/04.AplicacionesDerivada)</em></td><td>
        <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_Riemann_aritmetica"><td></td><td>
+       <strong>prop_Riemann_aritmetica</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#prop_Riemann_aritmetica"><code class="xref">prop_Riemann_aritmetica</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_acotaciones_Riemann"><td></td><td>
+       <strong>prop_acotaciones_Riemann</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#prop_acotaciones_Riemann"><code class="xref">prop_acotaciones_Riemann</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_aditividad_intervalos"><td></td><td>
+       <strong>prop_aditividad_intervalos</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#prop_aditividad_intervalos"><code class="xref">prop_aditividad_intervalos</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_alg_exp"><td></td><td>
        <strong>prop_alg_exp</strong></td><td></td></tr>
@@ -762,12 +903,60 @@ title="Fullscreen mode"
        <a href="capitulos/03/01.DerivacionDefProp.html#prop_indeterminaciones"><code class="xref">prop_indeterminaciones</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_integ_cambio_variable"><td></td><td>
+       <strong>prop_integ_cambio_variable</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#prop_integ_cambio_variable"><code class="xref">prop_integ_cambio_variable</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_integ_racionales"><td></td><td>
+       <strong>prop_integ_racionales</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#prop_integ_racionales"><code class="xref">prop_integ_racionales</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_integrabilidad_Riemann"><td></td><td>
+       <strong>prop_integrabilidad_Riemann</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/02.IntegracionRiemann.html#prop_integrabilidad_Riemann"><code class="xref">prop_integrabilidad_Riemann</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_integracion_ind_partes"><td></td><td>
+       <strong>prop_integracion_ind_partes</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#prop_integracion_ind_partes"><code class="xref">prop_integracion_ind_partes</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_integrales_inmediatas"><td></td><td>
+       <strong>prop_integrales_inmediatas</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#prop_integrales_inmediatas"><code class="xref">prop_integrales_inmediatas</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_lim_cont"><td></td><td>
        <strong>prop_lim_cont</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="capitulos/02/05.Continuidad.html#prop_lim_cont"><code class="xref">prop_lim_cont</code></a> <em>(capitulos/02/05.Continuidad)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop_linealidad_int_indef"><td></td><td>
+       <strong>prop_linealidad_int_indef</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#prop_linealidad_int_indef"><code class="xref">prop_linealidad_int_indef</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-prop_regla_cadena"><td></td><td>
@@ -897,6 +1086,14 @@ title="Fullscreen mode"
        <td>
        <a href="capitulos/03/01.DerivacionDefProp.html#th_lhopital"><code class="xref">th_lhopital</code></a> <em>(capitulos/03/01.DerivacionDefProp)</em></td><td>
        <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-th_primitivas"><td></td><td>
+       <strong>th_primitivas</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/01.IntegracionIndefinida.html#th_primitivas"><code class="xref">th_primitivas</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>theorem</em></td></tr>
    </table>
 
 
@@ -917,6 +1114,13 @@ title="Fullscreen mode"
     By I. Arregui, J.J. Cendán, J.A. García, M. González, L. Hervella, J.G. López, M. Pájaro, A. Prieto and H. Varela<br/>
   
       &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+Esta obra está bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es"> Licencia Creative Commons Atribución 4.0 Internacional </a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es_ES"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+</div>
+
+    </div>
 </p>
         </footer>
     </div>
