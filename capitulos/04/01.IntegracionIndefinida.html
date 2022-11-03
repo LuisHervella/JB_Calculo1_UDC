@@ -583,7 +583,7 @@ title="Print to PDF"
 <section class="theorem-content" id="proof-content">
 <p>Si <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span> son dos primitivas de una misma función <span class="math notranslate nohighlight">\(f\)</span> en un intervalo <span class="math notranslate nohighlight">\(I\)</span>, entonces,</p>
 <div class="math notranslate nohighlight">
-\[ \exists k \in \mathbb{R} \text{ tal que } F(x)=G(x)+k, \quad \forall x \in I.\]</div>
+\[ \exists k \in \mathbb{R} \mbox{ tal que } F(x)=G(x)+k, \quad \forall x \in I.\]</div>
 </section>
 </div><p>Como consecuencia del anterior teorema, una vez conocida una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, ya se pueden obtener todas al sumar únicamente una constante a la primitiva ya conocida.</p>
 </section>
@@ -595,12 +595,12 @@ title="Print to PDF"
 <section class="definition-content" id="proof-content">
 <p>Dada una función <span class="math notranslate nohighlight">\(f:I\rightarrow \mathbb{R}\)</span>, se llama integral indefinida de <span class="math notranslate nohighlight">\(f\)</span> al conjunto de todas las primitivas de <span class="math notranslate nohighlight">\(f\)</span>, y se escribe</p>
 <div class="math notranslate nohighlight">
-\[\int f(x)\, \mathrm{d}x = \{ F \text{ tal que } F'(x)=f(x), \quad \forall x \in I\}.\]</div>
+\[\int f(x)\, \mathrm{d}x = \{ F : F'(x)=f(x), \quad \forall x \in I\}.\]</div>
 </section>
-</div><p>Utilizando el <a class="reference internal" href="#th_primitivas">Theorem 4.1</a>, es inmediato deducir que si conocemos una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span> su integral indefinida será</p>
+</div><p>Utilizando el <a class="reference internal" href="#th_primitivas">Theorem 4.1</a>, es inmediato deducir que si conocemos una primitiva <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(f\)</span>, su integral indefinida será</p>
 <div class="math notranslate nohighlight">
 \[\int f(x) \, \mathrm{d}x = \{ F(x) +k, \quad \forall k \in \mathbb{R}\}.\]</div>
-<p>Entre las propiedades de la integral está la linealidad, que pasamos a enunciar.</p>
+<p>Entre las propiedades de la integral está la linealidad, es decir:</p>
 <div class="proof property admonition" id="prop_linealidad_int_indef">
 <p class="admonition-title"><span>Property </span> (Linealidad de la integración indefinida)</p>
 <section class="property-content" id="proof-content">
@@ -624,7 +624,11 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \int \dfrac{1}{\sqrt{1-x^2}} \, \mathrm{d}x = \arcsin(x) + C\)</span>.</p></li>
 </ul>
 </section>
-</div></section>
+</div><p>¿Te apetece practicas un poco con las llamadas <em>integrales inmediatas</em>? Aquí puedes hacerlo:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.matesfacil.com/ejercicios-resueltos-integrales-inmediatas.htm">https://www.matesfacil.com/ejercicios-resueltos-integrales-inmediatas.htm</a></p></li>
+</ul>
+</section>
 <section id="principales-metodos-para-obtener-las-integrales-indefinidas">
 <h2><span class="section-number">4.1.3. </span>Principales métodos para obtener las integrales indefinidas<a class="headerlink" href="#principales-metodos-para-obtener-las-integrales-indefinidas" title="Permalink to this headline">#</a></h2>
 <p>Los métodos más comunes para obtener la integral indefinida de una función son la integración por partes, la integración por cambio de variable y la integración por descomposición de fracciones racionales.</p>
@@ -645,6 +649,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>polinomio (actúa como <span class="math notranslate nohighlight">\(u\)</span>) contra exponencial (actúa como <span class="math notranslate nohighlight">\(dv\)</span>),</p></li>
 <li><p>polinomio (<span class="math notranslate nohighlight">\(u\)</span>) contra seno o coseno (<span class="math notranslate nohighlight">\(dv\)</span>),</p></li>
+<li><p>inversa de trigonométrica o logarítmica (<span class="math notranslate nohighlight">\(u\)</span>) contra polinomio (<span class="math notranslate nohighlight">\(dv\)</span>),</p></li>
 <li><p>exponencial (<span class="math notranslate nohighlight">\(u\)</span> o <span class="math notranslate nohighlight">\(dv\)</span>) contra seno o coseno (<span class="math notranslate nohighlight">\(dv\)</span> o <span class="math notranslate nohighlight">\(u\)</span>).</p></li>
 </ul>
 <p>Veamos un ejemplo para aplicar el método de integración por partes.</p>
