@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Cálculo en una variable #
-=======
-# Cálculo en una variable
->>>>>>> 3148bfa0e0455027aceb51b4092beba3d392498a
 
 ![build](https://github.com/LuisHervella/JB_Calculo1_UDC/actions/workflows/deploy-book.yml/badge.svg) [![CC BY 4.0][cc-by-shield]][cc-by] [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LuisHervella/JB_Calculo1_UDC/main?urlpath=lab/tree/capitulos/)
 [![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2FLuisHervella.github.io%2FJB_Calculo1_UDC%2Fcapitulos%2FREADME.html)](https://LuisHervella.github.io/JB_Calculo1_UDC/capitulos/README.html)
@@ -18,7 +14,7 @@ Este material ha sido creado por (en orden alfabético):
 - Luis Hervella Nieto, 
 - José Germán López Salas, 
 - Manuel Pájaro Diéguez,
-- Andrés Prieto Aneiros, 
+- Andrés Prieto Aneiros e 
 - Hiram Varela Rodríguez.
 
 Esta obra está bajo una
