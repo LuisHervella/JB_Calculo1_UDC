@@ -272,6 +272,31 @@ const thebe_selector_output = ".output, .cell_output"
      4.3. Teorema Fundamental del Cálculo
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/04.IntegracionNumerica.html">
+     4.4. Integración numérica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/05.IntegracionImpropia.html">
+     4.5. Integración impropia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/06.AplicacionesIntegral.html">
+     4.6. Aplicaciones de la integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/07.EcuacionesDiferenciales.html">
+     4.7. Ecuaciones diferenciales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/04/08.Boletin4.html">
+     4.8. Boletín 4
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -307,6 +332,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="capitulos/05/05.Derivacion.html">
      5.5. Derivación en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="capitulos/05/06.Integracion.html">
+     5.6. Integración en Python
     </a>
    </li>
   </ul>
@@ -421,6 +451,7 @@ title="Fullscreen mode"
    <a href="#cap-def_extremo_absoluto"><strong>def_extremo_absoluto</strong></a> | 
    <a href="#cap-def_extremo_relativo"><strong>def_extremo_relativo</strong></a> | 
    <a href="#cap-def_integ_riemann"><strong>def_integ_riemann</strong></a> | 
+   <a href="#cap-def_intnum"><strong>def_intnum</strong></a> | 
    <a href="#cap-def_log"><strong>def_log</strong></a> | 
    <a href="#cap-def_particion"><strong>def_particion</strong></a> | 
    <a href="#cap-def_primitiva"><strong>def_primitiva</strong></a> | 
@@ -437,6 +468,7 @@ title="Fullscreen mode"
    <a href="#cap-ex_indefinida_partes"><strong>ex_indefinida_partes</strong></a> | 
    <a href="#cap-ex_indefinida_partes_2"><strong>ex_indefinida_partes_2</strong></a> | 
    <a href="#cap-ex_integ_racionales"><strong>ex_integ_racionales</strong></a> | 
+   <a href="#cap-ex_intnumersimple"><strong>ex_intnumersimple</strong></a> | 
    <a href="#cap-ex_sumas_Riemann"><strong>ex_sumas_Riemann</strong></a> | 
    <a href="#cap-example_Rolle"><strong>example_Rolle</strong></a> | 
    <a href="#cap-prop_Barrow"><strong>prop_Barrow</strong></a> | 
@@ -517,7 +549,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.html#def_clase_funcion"><code class="xref">def_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.old.html#def_clase_funcion"><code class="xref">def_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_concavidad"><td></td><td>
@@ -573,7 +605,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.html#def_derivada_segunda"><code class="xref">def_derivada_segunda</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.old.html#def_derivada_segunda"><code class="xref">def_derivada_segunda</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_derivadas_laterales"><td></td><td>
@@ -589,7 +621,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.html#def_derivadas_sucesivas"><code class="xref">def_derivadas_sucesivas</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.old.html#def_derivadas_sucesivas"><code class="xref">def_derivadas_sucesivas</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_distancia"><td></td><td>
@@ -630,6 +662,14 @@ title="Fullscreen mode"
        <td></td>
        <td>
        <a href="capitulos/04/02.IntegracionRiemann.html#def_integ_riemann"><code class="xref">def_integ_riemann</code></a> <em>(capitulos/04/02.IntegracionRiemann)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_intnum"><td></td><td>
+       <strong>def_intnum</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/04.IntegracionNumerica.html#def_intnum"><code class="xref">def_intnum</code></a> <em>(capitulos/04/04.IntegracionNumerica)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def_log"><td></td><td>
@@ -725,7 +765,7 @@ title="Fullscreen mode"
      <tr>
        <td></td>
        <td>
-       <a href="capitulos/03/03.DerivadasSucesivas.html#ex_clase_funcion"><code class="xref">ex_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas)</em></td><td>
+       <a href="capitulos/03/03.DerivadasSucesivas.old.html#ex_clase_funcion"><code class="xref">ex_clase_funcion</code></a> <em>(capitulos/03/03.DerivadasSucesivas.old)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex_indefinida_cambio_variable"><td></td><td>
@@ -758,6 +798,14 @@ title="Fullscreen mode"
        <td></td>
        <td>
        <a href="capitulos/04/01.IntegracionIndefinida.html#ex_integ_racionales"><code class="xref">ex_integ_racionales</code></a> <em>(capitulos/04/01.IntegracionIndefinida)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex_intnumersimple"><td></td><td>
+       <strong>ex_intnumersimple</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="capitulos/04/04.IntegracionNumerica.html#ex_intnumersimple"><code class="xref">ex_intnumersimple</code></a> <em>(capitulos/04/04.IntegracionNumerica)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex_sumas_Riemann"><td></td><td>
