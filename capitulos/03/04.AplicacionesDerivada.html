@@ -707,16 +707,16 @@ f(x)=x+\sin x-\frac{1}{\sqrt{x}+3}.
 <p>Vamos a demostrar que esta función tiene raíz en <span class="math notranslate nohighlight">\([0,\pi]\)</span> (utilizando el teorema de
 Bolzano), y, a continuación, que esta raíz es única, con el teorema de Rolle.</p>
 <p><em>Existencia</em></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
 \left.\begin{array}{l}
 f\mbox{ continua en }[0,\pi] \\
 f(0)=0+\sin 0-\frac{1}{\sqrt{0}+3}=-\frac{1}{3}&lt;0 \\
 f(\pi)= \pi+\sin \pi-\frac{1}{\sqrt{\pi}+3}=\pi-\frac{1}{\sqrt{\pi}+3}&gt;0
 \end{array}\right\} 
-\stackrel{\mbox{(Bolzano)}}{\Longrightarrow}
-\mbox{Existe raíz de $f$ en }[0,\pi].
-\end{split}\]</div>
+&amp; \stackrel{\mbox{(Bolzano)}}{\Longrightarrow}
+\exists\mbox{ raíz de $f$ en }[0,\pi].
+\end{align*}\]</div>
 <p><em>Unicidad</em></p>
 <p>Para probar la unicidad razonaremos por reducción al absurdo. Según el teorema de
 Rolle, si <span class="math notranslate nohighlight">\(f\)</span> tuviera dos raíces en <span class="math notranslate nohighlight">\([0,\pi]\)</span>, habría algún punto entre ellas (por
@@ -732,10 +732,13 @@ f'(x)=1+\cos x+\frac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}.
 \left.\begin{array}{ll}
 1+\cos x&gt;0&amp;\quad\forall x\in(0,\pi) \\
 \dfrac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}&gt;0&amp;\quad\forall x\in(0,\pi)
-\end{array}\right\}
-\Rightarrow
-f'(x)=1+\cos x+\frac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}&gt;0\quad\forall x\in(0,\pi),
+\end{array}\right\},
 \end{split}\]</div>
+<p>entonces</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=1+\cos x+\frac{1}{2\sqrt{x}\left(\sqrt{x}+3\right)^2}&gt;0\quad\forall x\in(0,\pi),
+\]</div>
 <p>lo que contradice el que exista un punto en el que <span class="math notranslate nohighlight">\(f'\)</span> se anula. Por lo tanto, es
 imposible que haya dos raíces distintas de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\([0,\pi]\)</span>.</p>
 </section>

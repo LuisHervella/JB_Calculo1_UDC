@@ -515,6 +515,16 @@ title="Print to PDF"
    4.5.3. Integrales impropias de tercera especie
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-informacion">
+   4.5.4. Más información
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otros-ejercicios">
+   4.5.5. Otros ejercicios
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -549,6 +559,16 @@ title="Print to PDF"
    4.5.3. Integrales impropias de tercera especie
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-informacion">
+   4.5.4. Más información
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otros-ejercicios">
+   4.5.5. Otros ejercicios
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -566,24 +586,25 @@ title="Print to PDF"
 \[\begin{equation*}
 \int_1^{\infty} \frac{dx}{x^3} \, , \qquad \qquad \int_{-1}^{1} \frac{dx}{x^2} \, .
 \end{equation*}\]</div>
-<p>Estas integrales de denominan impropias y pueden clasificarse en:</p>
+<p>Estas integrales se denominan <strong>impropias</strong> y pueden clasificarse en:</p>
 <ul class="simple">
-<li><p>de primera especie, si la función está acotada pero el intervalo es infinito</p></li>
-<li><p>de segunda especie, si el intervalo es finito pero la función no está acotada en el intervalo</p></li>
+<li><p>de primera especie, si la función está acotada pero el intervalo es infinito,</p></li>
+<li><p>de segunda especie, si el intervalo es finito pero la función no está acotada en el intervalo,</p></li>
 <li><p>de tercera especie, cuando ni la función ni el intervalo de integración están acotados.</p></li>
 </ul>
 <section id="integrales-impropias-de-primera-especie">
 <h2><span class="section-number">4.5.1. </span>Integrales impropias de primera especie<a class="headerlink" href="#integrales-impropias-de-primera-especie" title="Permalink to this headline">#</a></h2>
-<p>En estas integrales, el intervalo de integración no es finito.  Sea <span class="math notranslate nohighlight">\(f: [a,+\infty) \rightarrow \mathbb{R}\)</span> integrable en <span class="math notranslate nohighlight">\([a, b]\)</span> para cualquier <span class="math notranslate nohighlight">\(b \geq a\)</span>.  Entonces, se define:</p>
+<p>En estas integrales, <strong>la función es acotada pero el intervalo de integración es infinito</strong>.</p>
+<p>Sea <span class="math notranslate nohighlight">\(f: [a,+\infty) \rightarrow \mathbb{R}\)</span> integrable en <span class="math notranslate nohighlight">\([a, b]\)</span> para cualquier <span class="math notranslate nohighlight">\(b \geq a\)</span>.  Entonces, se define:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \int_a^{+\infty} f(x) \, dx = \underset{b \rightarrow +\infty}{\lim} \int_a^b f(x) \, dx \, .
 \end{equation*}\]</div>
 <p>Su cálculo tiene dos partes:</p>
-<ul class="simple">
-<li><p>calculamos la integral definida en un intervalo finito</p></li>
-<li><p>hacemos que el extremo superior del intervalo tienda a infinito.</p></li>
-</ul>
+<ol class="simple">
+<li><p>Calculamos la integral definida en un intervalo finito.</p></li>
+<li><p>Hacemos que el extremo superior del intervalo tienda a infinito.</p></li>
+</ol>
 <p>Veamos un ejemplo:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -598,8 +619,8 @@ I = \int_0^{+\infty} e^{-2x} \, dx &amp;= \underset{b \rightarrow +\infty}{\lim}
    = -\frac{1}{2} \left[ 0 - 1 \right] = \frac{1}{2} \, .
 \end{align*}\]</div>
 <p>Hemos obtenido un resultado finito.  En estos casos, decimos que <strong>la integral impropia es convergente</strong>.</p>
-<p>De forma similar podemos resolver una integral impropia donde el intervalo no está acotado por la izquierda:
-Si <span class="math notranslate nohighlight">\(f: (-\infty, b] \rightarrow \mathbb{R}\)</span> es integrable en <span class="math notranslate nohighlight">\([a, b]\)</span> para cualquier <span class="math notranslate nohighlight">\(a \leq b\)</span>, se define:</p>
+<p>De forma similar podemos resolver una integral impropia donde el intervalo no está acotado por la izquierda.</p>
+<p>Si <span class="math notranslate nohighlight">\(f: (-\infty, b] \rightarrow \mathbb{R}\)</span> es integrable en <span class="math notranslate nohighlight">\([a, b]\)</span> para cualquier <span class="math notranslate nohighlight">\(a \leq b\)</span>, se define:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \int_{-\infty}^b f(x) \, dx = \underset{a \rightarrow -\infty}{\lim} \int_a^b f(x) \, dx \, .
@@ -607,10 +628,10 @@ Si <span class="math notranslate nohighlight">\(f: (-\infty, b] \rightarrow \mat
 <p>Por ejemplo,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\int_{-\infty}^3 \frac{dx}{x^2} \, dx = \underset{a \rightarrow -\infty}{\lim} \int_a^3 \frac{dx}{x^2} \, dx
-   = \underset{a \rightarrow -\infty}{\lim} \left[ -\frac{1}{x} \right]_a^3
-   =  \underset{a \rightarrow -\infty}{\lim} \left[ -\frac{1}{3} + \frac{1}{a} \right]
-   = -\frac{1}{3} \, ,
+\int_{-\infty}^{-3} \frac{dx}{x^2} \, dx = \underset{a \rightarrow -\infty}{\lim} \int_a^{-3} \frac{dx}{x^2} \, dx
+   = \underset{a \rightarrow -\infty}{\lim} \left[ -\frac{1}{x} \right]_a^{-3}
+   =  \underset{a \rightarrow -\infty}{\lim} \left[ \frac{1}{3} + \frac{1}{a} \right]
+   = \frac{1}{3} \, ,
 \end{equation*}\]</div>
 <p>o bien</p>
 <div class="amsmath math notranslate nohighlight">
@@ -620,30 +641,29 @@ Si <span class="math notranslate nohighlight">\(f: (-\infty, b] \rightarrow \mat
    = \underset{a \rightarrow -\infty}{\lim} \left[ -e^{-1} + e^{-a} \right] = +\infty \, .
 \end{equation*}\]</div>
 <p>En el primer caso estamos, de nuevo, ante una integral convergente (porque el resultado es finito), mientras que la segunda integral es <strong>divergente</strong>.</p>
-<p>Si el intervalo no está acotado en ninguno de sus extremos, basta con tomar dos límites.  Por ejemplo,</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\int_{-\infty}^{+\infty} \frac{dx}{x^2+1} &amp;= \underset{a \rightarrow -\infty}{\lim} \underset{b \rightarrow +\infty}{\lim} \int_a^b \frac{dx}{x^2+1} = \\
-    &amp;= \underset{a \rightarrow -\infty}{\lim} \underset{b \rightarrow +\infty}{\lim} \left[ \arctan (x) \right]_a^b = \underset{a \rightarrow -\infty}{\lim} \underset{b \rightarrow +\infty}{\lim} \left[ \arctan (b) - \arctan (a) \right] = \frac{\pi}{2} - \left( -\frac{\pi}{2} \right) = \pi \, .
-\end{align*}\]</div>
-<p>De manera equivalente, podemos descomponer la integral en dos integrales impropias donde -en cada una de ellas- solo uno de los extremos no está acotado:</p>
+<p>Si el intervalo no está acotado en ninguno de sus extremos, debemos descomponer la integral en dos integrales impropias donde -en cada una de ellas- solo uno de los extremos no está acotado:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \int_{-\infty}^{+\infty} \frac{dx}{x^2+1} 
     &amp;= \int_{-\infty}^c \frac{dx}{x^2+1} + \int_c^{+\infty} \frac{dx}{x^2+1} = \\
     &amp;= \underset{a \rightarrow -\infty}{\lim} \int_a^c \frac{dx}{x^2+1} 
-     + \underset{b \rightarrow +\infty}{\lim} \int_c^b \frac{dx}{x^2+1} 
-     = \underset{a \rightarrow -\infty}{\lim} \left[ \arctan (x) \right]_a^c 
-     + \underset{b \rightarrow +\infty}{\lim} \left[ \arctan (x) \right]_c^b = \\ 
+     + \underset{b \rightarrow +\infty}{\lim} \int_c^b \frac{dx}{x^2+1} \\
+    &amp;= \underset{a \rightarrow -\infty}{\lim} \left[ \arctan (x) \right]_a^c 
+     + \underset{b \rightarrow +\infty}{\lim} \left[ \arctan (x) \right]_c^b \\ 
     &amp;= \left[ \arctan (c) - \underset{a \rightarrow -\infty}{\lim} \arctan (a) \right]
-     + \left[ \underset{b \rightarrow +\infty}{\lim} \arctan (b) - \arctan (c) \right] 
-     = \arctan (c) - \left( -\frac{\pi}{2} \right) + \frac{\pi}{2} - \arctan (c) = \pi \, .
+     + \left[ \underset{b \rightarrow +\infty}{\lim} \arctan (b) - \arctan (c) \right] \\
+    &amp;= \arctan (c) - \left( -\frac{\pi}{2} \right) + \frac{\pi}{2} - \arctan (c) = \pi \, .
 \end{align*}\]</div>
 <p>Si la integral está bien planteada, el resultado será independiente del punto <span class="math notranslate nohighlight">\(c\)</span> introducido.</p>
+<div class="proof remark admonition" id="rem_impropia">
+<p class="admonition-title"><span>Remark </span></p>
+<section class="remark-content" id="proof-content">
+<p>En este caso, <strong>si una de las integrales en la descomposición es divergente, toda la integral se dice divergente</strong>, independientemente de lo que le pase a la otra integral.</p>
 </section>
+</div></section>
 <section id="integrales-impropias-de-segunda-especie">
 <h2><span class="section-number">4.5.2. </span>Integrales impropias de segunda especie<a class="headerlink" href="#integrales-impropias-de-segunda-especie" title="Permalink to this headline">#</a></h2>
-<p>Decimos que una integral impropia es de segunda especie cuando el intervalo de integración es finito pero la función a integrar, <span class="math notranslate nohighlight">\(f\)</span>, no está acotada en algún punto del intervalo:</p>
+<p>Decimos que <strong>una integral impropia es de segunda especie cuando el intervalo de integración es finito pero la función a integrar, <span class="math notranslate nohighlight">\(f\)</span>, no está acotada en algún punto del intervalo</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \underset{x \rightarrow c}{\lim} f(x) = \pm \infty \qquad \text{ con } c \in [a,b] \, .
@@ -661,60 +681,79 @@ Si <span class="math notranslate nohighlight">\(f: (-\infty, b] \rightarrow \mat
     &amp;= \underset{c \rightarrow 2}{\lim} \left[ \frac{(x-2)^{1/2}}{1/2} \right]_c^4
      = 2 \underset{c \rightarrow 2}{\lim} \left[ \sqrt{4-2} - \sqrt{c-2} \right] = 2 \sqrt{2} \, .
 \end{align*}\]</div>
-<p>De manera similar haríamos si la función tiende a infinito cuando nos acercamos al límite derecho del intervalo:</p>
+<p>Se hace de manera similar si la función tiende a infinito cuando nos acercamos al límite derecho del intervalo:</p>
 <div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\int_2^4 \frac{dx}{(x-4)^{1/3}} = \underset{c \rightarrow 4}{\lim} \int_2^c (x-4)^{-1/3} \, dx 
-   = \underset{c \rightarrow 4}{\lim} \left[ \frac{(x-4)^{2/3}}{2/3} \right]_2^c
-   = \frac{3}{2} \underset{c \rightarrow 4}{\lim} \left[ (c-4)^{2/3} - (2-4)^{2/3} \right]
+\[\begin{align*}
+\int_2^4 \frac{dx}{(x-4)^{1/3}} &amp;= \underset{c \rightarrow 4}{\lim} \int_2^c (x-4)^{-1/3} \, dx 
+   = \underset{c \rightarrow 4}{\lim} \left[ \frac{(x-4)^{2/3}}{2/3} \right]_2^c \\
+   &amp;= \frac{3}{2} \underset{c \rightarrow 4}{\lim} \left[ (c-4)^{2/3} - (2-4)^{2/3} \right]
    = -\frac{3}{2} 2^{2/3} \, .
-\end{equation*}\]</div>
+\end{align*}\]</div>
 <p>Y si el punto donde la función tiende a infinito está en el interior del intervalo de integración, basta con descomponer la integral en una suma de otras dos como las que acabamos de describir. Por ejemplo:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\int_1^4 \frac{dx}{(x-2)^{1/3}} &amp;= \int_1^2 \frac{dx}{(x-2)^{1/3}} + \int_2^4 \frac{dx}{(x-2)^{1/3}}
-     =\underset{b \rightarrow 2}{\lim} \int_1^b (x-2)^{-1/3} \, dx 
-                                 + \underset{a \rightarrow 2}{\lim} \int_b^4 (x-2)^{-1/3} \, dx = \\
+\int_1^4 \frac{dx}{(x-2)^{1/3}} &amp;= \int_1^2 \frac{dx}{(x-2)^{1/3}} + \int_2^4 \frac{dx}{(x-2)^{1/3}} \\
+     &amp;=\underset{b \rightarrow 2}{\lim} \int_1^b (x-2)^{-1/3} \, dx 
+                                 + \underset{a \rightarrow 2}{\lim} \int_a^4 (x-2)^{-1/3} \, dx  \\
     &amp;= \underset{b \rightarrow 2}{\lim} \left[ \frac{(x-2)^{2/3}}{2/3} \right]_1^b
-     + \underset{a \rightarrow 2}{\lim} \left[ \frac{(x-2)^{2/3}}{2/3} \right]_b^4 = \\
+     + \underset{a \rightarrow 2}{\lim} \left[ \frac{(x-2)^{2/3}}{2/3} \right]_a^4  \\
     &amp;= \frac{3}{2} \underset{b \rightarrow 2}{\lim} \left[ (b-2)^{2/3} - (1-2)^{2/3} \right]
-     + \frac{3}{2} \underset{a \rightarrow 2}{\lim} \left[ (4-2)^{2/3} - (1-2)^{2/3} \right] = \\
+     + \frac{3}{2} \underset{a \rightarrow 2}{\lim} \left[ (4-2)^{2/3} - (a-2)^{2/3} \right]  \\
     &amp;= \frac{3}{2} \left[ 0 - 1 \right] + \frac{3}{2} \left[ 2^{2/3} - 0 \right] 
      = \frac{3}{2} \left(\sqrt[3]{4} - 1 \right) \, .
 \end{align*}\]</div>
 </section>
 <section id="integrales-impropias-de-tercera-especie">
 <h2><span class="section-number">4.5.3. </span>Integrales impropias de tercera especie<a class="headerlink" href="#integrales-impropias-de-tercera-especie" title="Permalink to this headline">#</a></h2>
-<p>En este grupo incluimos las integrales en las que tanto el intervalo como la función dejan de estar acotados.  Para resolverlas, basta con combinar las técnicas que hemos visto en las secciones anteriores.</p>
+<p>En este grupo incluimos las <strong>integrales en las que tanto el intervalo como la función no están acotadas</strong>.</p>
+<p>Para resolverlas, basta con combinar las técnicas que hemos visto en las secciones anteriores.</p>
 <p>Veamos un ejemplo:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \int_1^{+\infty} \frac{dx}{(x-4)^{2/5}} \, .
 \end{equation*}\]</div>
-<p>Vemos que el intervalo de integración es infinito y, además, la función a integrar no está acotada en <span class="math notranslate nohighlight">\(x = 4\)</span>.  Para resolverla, la descomponemos en:</p>
+<p>Vemos que el intervalo de integración es infinito y, además, la función a integrar no está acotada en <span class="math notranslate nohighlight">\(x = 4\)</span>.</p>
+<p>Para resolverla, la descomponemos en:</p>
 <ul class="simple">
-<li><p>una integral entre <span class="math notranslate nohighlight">\(1\)</span> y <span class="math notranslate nohighlight">\(4\)</span> (impropia de segunda especie)</p></li>
-<li><p>una integral entre <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(6\)</span> (impropia de segunda especie)</p></li>
+<li><p>una integral entre <span class="math notranslate nohighlight">\(1\)</span> y <span class="math notranslate nohighlight">\(4\)</span> (impropia de segunda especie),</p></li>
+<li><p>una integral entre <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(6\)</span> (impropia de segunda especie),</p></li>
 <li><p>una integral entre <span class="math notranslate nohighlight">\(6\)</span> y <span class="math notranslate nohighlight">\(+\infty\)</span> (impropia de primera especie).</p></li>
 </ul>
 <p>Hemos escogido el punto <span class="math notranslate nohighlight">\(6\)</span> como podríamos haber escogido cualquier otro en <span class="math notranslate nohighlight">\((4, +\infty)\)</span>.  De esta manera,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \int_1^{+\infty} \frac{dx}{(x-4)^{2/5}} &amp;= \int_1^4 \frac{dx}{(x-4)^{2/5}} 
-       + \int_4^6 \frac{dx}{(x-4)^{2/5}} + \int_6^{+\infty} \frac{dx}{(x-4)^{2/5}} = \\
+       + \int_4^6 \frac{dx}{(x-4)^{2/5}} + \int_6^{+\infty} \frac{dx}{(x-4)^{2/5}} \\
     &amp;= \underset{b \rightarrow 4}{\lim} \int_1^b (x-4)^{-2/5} \, dx 
-     + \underset{a \rightarrow 4}{\lim} \int_a^6 (x-4)^{-2/5} \, dx
-     + \underset{c \rightarrow +\infty}{\lim} \int_6^c (x-4)^{-2/5} \, dx = \\
+     + \underset{a \rightarrow 4}{\lim} \int_a^6 (x-4)^{-2/5} \, dx \\
+    &amp; \hphantom{=} + \underset{c \rightarrow +\infty}{\lim} \int_6^c (x-4)^{-2/5} \, dx \\
     &amp;= \underset{b \rightarrow 4}{\lim} \left[ \frac{(x-4)^{3/5}}{3/5} \right]_1^b
      + \underset{a \rightarrow 4}{\lim} \left[ \frac{(x-4)^{3/5}}{3/5} \right]_a^6
-     + \underset{c \rightarrow +\infty}{\lim} \left[ \frac{(x-4)^{3/5}}{3/5} \right]_6^c = \\
+     + \underset{c \rightarrow +\infty}{\lim} \left[ \frac{(x-4)^{3/5}}{3/5} \right]_6^c \\
     &amp;= \dfrac{5}{3} \left[ \underset{b \rightarrow 4}{\lim} \left( (b-4)^{3/5} - (-3)^{3/5} \right) 
-                         + \underset{a \rightarrow 4}{\lim} \left( (6-4)^{3/5} - (a-4)^{3/5} \right) 
-                         + \underset{c \rightarrow +\infty}{\lim} \left( (c-4)^{3/5} - 2^{3/5} \right) \right] = \\
+                         + \underset{a \rightarrow 4}{\lim} \left( (6-4)^{3/5} - (a-4)^{3/5} \right) \right. \\
+    &amp; \hphantom{= \dfrac{5}{3}} \left. + \underset{c \rightarrow +\infty}{\lim} \left( (c-4)^{3/5} - 2^{3/5} \right) \right]  \\
     &amp;= \dfrac{5}{3} \left[ 0 + 3^{3/5} + 2^{3/5} - 0 
                     + \underset{c \rightarrow +\infty}{\lim} (c-4)^{3/5} - 2^{3/5} \right] = +\infty \, .
 \end{align*}\]</div>
-<p>Por lo tanto, en este caso tenemos una integral divergente.</p>
+<p>Por lo tanto, en este ejemplo, estamos ante una integral divergente.</p>
+<p>Recordamos que basta con que uno de los trozos sea divergente para que toda la integral sea considerada del mismo modo.</p>
+</section>
+<section id="mas-informacion">
+<h2><span class="section-number">4.5.4. </span>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">#</a></h2>
+<p>Puedes encontrar más información, y algunos ejemplos/ejercicios en</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://es.wikipedia.org/wiki/Integral_impropia">https://es.wikipedia.org/wiki/Integral_impropia</a></p></li>
+<li><p><a class="reference external" href="https://es.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-13/a/improper-integrals-review">https://es.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-13/a/improper-integrals-review</a></p></li>
+</ul>
+</section>
+<section id="otros-ejercicios">
+<h2><span class="section-number">4.5.5. </span>Otros ejercicios<a class="headerlink" href="#otros-ejercicios" title="Permalink to this headline">#</a></h2>
+<p>Además de los ejercicios que puedes encontrar en los boletines, te recomendamos que eches un vistazo a</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ehu.eus/~mtpalezp/mundo/ana1/EJERCICIOSINTEGRALIMPROPIA.pdf">https://www.ehu.eus/~mtpalezp/mundo/ana1/EJERCICIOSINTEGRALIMPROPIA.pdf</a></p></li>
+<li><p><a class="reference external" href="https://existelimite.blogspot.com/search/label/Integraci%C3%B3n%20impropia">https://existelimite.blogspot.com/search/label/Integración impropia</a> (son un poco más difíciles de lo habitual, pero… ¡tú puedes!).</p></li>
+</ul>
 </section>
 </section>
 
