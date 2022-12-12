@@ -533,18 +533,29 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sympy-para-resolver-edos">
+   4.7.3. Uso de
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+   para resolver EDOs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#edos-en-variables-separadas">
-   4.7.3. EDOs en variables separadas
+   4.7.4. EDOs en variables separadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#edos-lineales-de-primer-orden">
-   4.7.4. EDOs lineales de primer orden
+   4.7.5. EDOs lineales de primer orden
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   4.7.5. Referencias
+   4.7.6. Referencias
   </a>
  </li>
 </ul>
@@ -599,18 +610,29 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-sympy-para-resolver-edos">
+   4.7.3. Uso de
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Sympy
+    </span>
+   </code>
+   para resolver EDOs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#edos-en-variables-separadas">
-   4.7.3. EDOs en variables separadas
+   4.7.4. EDOs en variables separadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#edos-lineales-de-primer-orden">
-   4.7.4. EDOs lineales de primer orden
+   4.7.5. EDOs lineales de primer orden
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   4.7.5. Referencias
+   4.7.6. Referencias
   </a>
  </li>
 </ul>
@@ -879,8 +901,55 @@ mx'' = mg - kx' \, .
 \]</div>
 </section>
 </section>
+<section id="uso-de-sympy-para-resolver-edos">
+<h2><span class="section-number">4.7.3. </span>Uso de <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> para resolver EDOs<a class="headerlink" href="#uso-de-sympy-para-resolver-edos" title="Permalink to this headline">#</a></h2>
+<p>A continuación mostramos cómo se puede utilizar <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> en la resolución de EDOs.</p>
+<p>Realmente, es muy sencillo.</p>
+<ol class="simple">
+<li><p>Definimos la EDO con el comando <code class="docutils literal notranslate"><span class="pre">sp.Eq</span></code>, destacando la dependencia de la variable dependiente de la independiente. En el siguiente ejemplo, puedes ver cómo en la línea 7 escribimos `v(x)’ cada vez que aparece la variable dependiente <span class="math notranslate nohighlight">\(v\)</span>.</p></li>
+<li><p>Las derivadas se escriben, dentro de la definición <code class="docutils literal notranslate"><span class="pre">sp.Eq</span></code> indicando la variable dependiente y la variable dependiente respecto a la que se derivan. En el ejemplo que aparece a continuación, escribimos <span class="math notranslate nohighlight">\(v'\)</span> como <code class="docutils literal notranslate"><span class="pre">v(x).diff(x)</span></code>.</p></li>
+<li><p>Una vez definida la EDO, la resolvemos con el comando <code class="docutils literal notranslate"><span class="pre">sp.dsolve</span></code>.</p></li>
+<li><p>Podemos usar <code class="docutils literal notranslate"><span class="pre">sp.dsolve</span></code> sin más atributos para encontrar la solución general, o podemos incluir una condición inicial, que debemos definir como <code class="docutils literal notranslate"><span class="pre">ics</span></code>, como se puede ver en la penúltima línea del siguiente código.</p></li>
+</ol>
+<p>Como ejemplo, vamos a calcular la velocidad de un cuerpo con masa <span class="math notranslate nohighlight">\(72\)</span> kilogramos, si suponemos que su velocidad inicial es nula y su coeficiente de resistencia al aire es <span class="math notranslate nohighlight">\(k=0.2\)</span>.</p>
+<p>Es decir, en función de lo que vimos en la sección anterior, vamos a resolver el problema de valor inicial</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left\{\begin{array}{rcl}
+    72 v'&amp;=&amp; 72*9.81 - 0.2 v\,,\\
+    v(0) &amp;=&amp; 0\,,
+    \end{array}\right.
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span> <span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+
+<span class="c1"># Escribimos la EDO </span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="mi">72</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">72</span><span class="o">*</span><span class="mf">9.81</span> <span class="o">-</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Calculamos su solución general (este paso no sería necesario, pero queda como ejemplo)</span>
+<span class="n">s_general</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">)</span>   
+<span class="n">display</span> <span class="p">(</span><span class="n">s_general</span><span class="p">)</span>
+
+<span class="c1"># Calculamos la solución particular que nos preguntan</span>
+<span class="n">s_particular</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">v</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mf">0.0</span><span class="p">})</span> 
+<span class="n">display</span> <span class="p">(</span><span class="n">s_particular</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle v{\left(x \right)} = C_{1} e^{- 0.00277777777777778 x} + 3531.6\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle v{\left(x \right)} = 3531.6 - 3531.6 e^{- 0.00277777777777778 x}\]</div>
+</div>
+</div>
+</section>
 <section id="edos-en-variables-separadas">
-<h2><span class="section-number">4.7.3. </span>EDOs en variables separadas<a class="headerlink" href="#edos-en-variables-separadas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.7.4. </span>EDOs en variables separadas<a class="headerlink" href="#edos-en-variables-separadas" title="Permalink to this headline">#</a></h2>
 <div class="proof definition admonition" id="def_EDO_separable">
 <p class="admonition-title"><span>Definition </span> (Ecuación diferencial en variables separadas )</p>
 <section class="definition-content" id="proof-content">
@@ -1035,10 +1104,31 @@ xy'=1+y^2\,.
 y(x)=\tan(\ln|x|+C)\,.
 \]</div>
 </section>
-</div><p><strong>Nota:</strong> Fíjate que en los ejemplos anteriores, siempre es posible comprobar si hemos obtenido la solución correcta.</p>
+</div><p><strong>Nota:</strong> Fíjate que en los ejemplos anteriores, siempre es posible comprobar si hemos obtenido la solución correcta… y, si no, podemos usar <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>. Veámosolo, por ejemplo, sobre el último ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span> <span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Escribimos la EDO </span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="o">+</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Calculamos su solución general (este paso no sería necesario, pero así completamos el ejercicio)</span>
+<span class="n">s_general</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">)</span>   
+<span class="n">display</span> <span class="p">(</span><span class="n">s_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y{\left(x \right)} = \tan{\left(C_{1} + \log{\left(x \right)} \right)}\]</div>
+</div>
+</div>
 </section>
 <section id="edos-lineales-de-primer-orden">
-<h2><span class="section-number">4.7.4. </span>EDOs lineales de primer orden<a class="headerlink" href="#edos-lineales-de-primer-orden" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.7.5. </span>EDOs lineales de primer orden<a class="headerlink" href="#edos-lineales-de-primer-orden" title="Permalink to this headline">#</a></h2>
 <div class="proof definition admonition" id="def_EDO_lineal">
 <p class="admonition-title"><span>Definition </span> (Ecuación diferencial lineal de primer orden )</p>
 <section class="definition-content" id="proof-content">
@@ -1135,9 +1225,37 @@ e^{x} y= \frac{e^x}{2}\left(\sin(x)-\cos(x)\right)+C \Rightarrow y = \dfrac{\sin
 y(x)=\frac{1}{2}\left( \sin(x)-\cos(x)+5e^{-x}\right).
 \]</div>
 </section>
-</div></section>
+</div><p>Veamos a continuación cómo resolver este último problema aprovechando la potencia de <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span> <span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Escribimos la EDO </span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span> <span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Resolvemos su solución general (realmente este paso no sería necesario, pero así completamos el ejercicio)</span>
+<span class="n">s_general</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">)</span>   
+<span class="n">display</span> <span class="p">(</span><span class="n">s_general</span><span class="p">)</span>
+
+<span class="c1"># Calculamos la solución particular que nos preguntan</span>
+<span class="n">s_particular</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span> <span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="mf">2.0</span><span class="p">})</span> 
+<span class="n">display</span> <span class="p">(</span><span class="n">s_particular</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y{\left(x \right)} = C_{1} e^{- x} + \frac{\sin{\left(x \right)}}{2} - \frac{\cos{\left(x \right)}}{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y{\left(x \right)} = \frac{\sin{\left(x \right)}}{2} - \frac{\cos{\left(x \right)}}{2} + 2.5 e^{- x}\]</div>
+</div>
+</div>
+</section>
 <section id="referencias">
-<h2><span class="section-number">4.7.5. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.7.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <p>Para saber más, puedes consultar, por ejemplo, los siguientes enlaces:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://totumat.com/2020/09/16/ecuaciones-diferenciales-ordinarias-de-variables-separables/">https://totumat.com/2020/09/16/ecuaciones-diferenciales-ordinarias-de-variables-separables/</a></p></li>
