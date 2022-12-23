@@ -339,6 +339,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/README.html">
+   6. Ejercicios y exámenes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/enero_22.html">
+     6.1. Examen Enero 2022
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/julio_22.html">
+     6.2. Examen Julio 2022
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -844,13 +866,13 @@ y'=f(x,y)\,,\quad x\in (a,b)\,,
 <p>Llamaremos <span class="math notranslate nohighlight">\(N(t)\)</span> al número de núcleos radiactivos en el instante <span class="math notranslate nohighlight">\(t\)</span>. La ley de desintegración radiactiva dice: <em>la tasa a la que se desintegrarán sus núcleos será constante y no cambiará con el tiempo</em>. Como esta tasa es la variación en el número de núcleos, es decir, la derivada de <span class="math notranslate nohighlight">\(N\)</span> en función del tiempo, podemos escribir la ecuación diferencial que rige el proceso:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{dN}{dt} = -KN \Leftrightarrow N' = -K N.
+\frac{dN}{dt} = -kN \Leftrightarrow N' = -k N.
 \]</div>
 <p>Si conocemos la cantidad inicial de material, <span class="math notranslate nohighlight">\(N_{0}\)</span>, ya tendremos un problema de valor inicial con el que podremos trabajar:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \left\{\begin{array}{lcl}
-\displaystyle\frac{dN}{dt} &amp;=&amp; -KN \\
+\displaystyle\frac{dN}{dt} &amp;=&amp; -kN \\
 N(0) &amp;=&amp; N_{0}
 \end{array} \right.
 \end{split}\]</div>
@@ -858,7 +880,7 @@ N(0) &amp;=&amp; N_{0}
 <p>Comprueba que el tiempo de semidesintegración radiactiva (es decir, el tiempo necesario para que se desintegre la mitad del material inicialmente presente) es</p>
 <div class="math notranslate nohighlight">
 \[
-t_{0} = \frac{\ln 2}{K}.
+t_{0} = \frac{\ln 2}{k}.
 \]</div>
 </section>
 <section id="segunda-ley-de-newton">
@@ -906,6 +928,7 @@ mx'' = mg - kx' \, .
 <p>A continuación mostramos cómo se puede utilizar <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> en la resolución de EDOs.</p>
 <p>Realmente, es muy sencillo.</p>
 <ol class="simple">
+<li><p>Las variables independientes se definen como símbolos (<code class="docutils literal notranslate"><span class="pre">sp.Symbol</span></code>), mientras que las variables dependientes se definen como funciones (<code class="docutils literal notranslate"><span class="pre">sp.Function</span></code>).</p></li>
 <li><p>Definimos la EDO con el comando <code class="docutils literal notranslate"><span class="pre">sp.Eq</span></code>, destacando la dependencia de la variable dependiente de la independiente. En el siguiente ejemplo, puedes ver cómo en la línea 7 escribimos `v(x)’ cada vez que aparece la variable dependiente <span class="math notranslate nohighlight">\(v\)</span>.</p></li>
 <li><p>Las derivadas se escriben, dentro de la definición <code class="docutils literal notranslate"><span class="pre">sp.Eq</span></code> indicando la variable dependiente y la variable dependiente respecto a la que se derivan. En el ejemplo que aparece a continuación, escribimos <span class="math notranslate nohighlight">\(v'\)</span> como <code class="docutils literal notranslate"><span class="pre">v(x).diff(x)</span></code>.</p></li>
 <li><p>Una vez definida la EDO, la resolvemos con el comando <code class="docutils literal notranslate"><span class="pre">sp.dsolve</span></code>.</p></li>
@@ -924,7 +947,9 @@ mx'' = mg - kx' \, .
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="c1"># Variable independiente</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="c1"># Variable dependiente (definida como Function)</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span> <span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
 
 <span class="c1"># Escribimos la EDO </span>
